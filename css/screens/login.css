@@ -1,15 +1,15 @@
 .welcome-header {
-  margin: 90px 0px;
+  margin: 0px 0px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .welcome-header__title {
+  margin-top: 15px;
   margin-bottom: 20px;
   font-size: 25px;
 }
-
 .welcome-header__text {
   width: 60%;
   opacity: 0.7;
@@ -18,13 +18,13 @@
 #login-form {
   display: flex;
   flex-direction: column;
-  margin: 0 30px;
+  margin: 0px 30px;
 }
 
 #login-form input {
-  font-size: 18px;
   border: none;
   padding: 15px 0px;
+  font-size: 18px;
   margin-bottom: 25px;
 }
 
@@ -44,7 +44,7 @@
 #login-form input[type="submit"] {
   background-color: var(--yellow);
   cursor: pointer;
-  padding: 20px;
+  padding: 20px 0px;
   border-radius: 5px;
 }
 
