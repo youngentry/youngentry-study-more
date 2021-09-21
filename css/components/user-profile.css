@@ -1,0 +1,94 @@
+.user-profile {
+  display: flex;
+  margin: 0px 20px;
+  justify-content: space-between;
+}
+
+.user-profile__column {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.user-profile__avatar {
+  display: flex;
+  height: 70px;
+  width: 70px;
+  border-radius: 30px;
+}
+.user-profile__info,
+.user-profile__name {
+  padding: 3px 15px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.user-profile__info {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.channel {
+  display: flex;
+  margin: 15px 20px;
+  justify-content: space-between;
+  opacity: 0.4;
+  font-size: 20px;
+  font-weight: 600;
+  border-top: var(--border);
+  padding-top: 20px;
+}
+
+.channel__icon {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.user-profile__channel {
+  display: flex;
+  border-bottom: none;
+}
+
+.user-profile__channel .user-profile__column img {
+  width: 60px;
+  height: 60px;
+  border-radius: 25px;
+}
+
+.user-profile__channel .user-profile__name {
+  font-size: 22px;
+}
+
+.user-profile__channel .user-profile__column:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.user-profile__channel .user-profile__column:last-child span {
+  margin: 8px;
+  opacity: 0.4;
+}
+
+.user-profile__time {
+  flex-direction: column;
+}
+
+.user-profile__time h4 {
+  display: flex;
+  background-color: tomato;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+  margin-left: 20px;
+}
+
+.user-profile__column i {
+  opacity: 0.4;
+}
