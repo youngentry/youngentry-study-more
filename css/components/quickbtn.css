@@ -1,0 +1,25 @@
+.contacts {
+  margin: 25px;
+}
+
+.contacts-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts-column__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+
+.contacts-column__icon span:first-child {
+  font-size: 25px;
+  padding: 25px;
+}
+
+.contacts-column__icon span:last-child {
+  font-size: 18px;
+  text-align: center;
+}

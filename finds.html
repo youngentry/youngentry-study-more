@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finds - clone by myself</title>
+  </head>
+
+  <body>
+    <div id="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fas fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
+      <div class="status-bar__column">
+        <span>99%</span>
+        <i class="fas fa-battery-full fa-lg"></i>
+        <i class="fas fa-bolt"></i>
+      </div>
+    </div>
+
+    <header id="screen-header">
+      <h1 class="screen-header__title">Find</h1>
+      <div class="screen-header__icons">
+        <span><i class="fas fa-search fa-la"></i></span>
+        <span><i class="fas fa-cog fa-la"></i></span>
+      </div>
+    </header>
+
+    <main>
+      <div class="contacts">
+        <div class="contacts-column">
+          <div class="contacts-column__icon">
+            <span><i class="fas fa-qrcode fa-lg"></i></span>
+            <span>QR Code</span>
+          </div>
+          <div class="contacts-column__icon">
+            <span><i class="far fa-address-book fa-lg"></i></span>
+            <span>Add by Contacts</span>
+          </div>
+          <div class="contacts-column__icon">
+            <span><i class="far fa-user-circle fa-lg"></i></span>
+            <span>Add by ID</span>
+          </div>
+          <div class="contacts-column__icon">
+            <span><i class="far fa-envelope fa-lg"></i></span>
+            <span>Invite</span>
+          </div>
+        </div>
+      </div>
+      <div class="recommendation-bar">
+        <div class="recommendation-bar__title">Recommended Friends</div>
+        <div class="recommendation-bar__text">
+          You have no recommended friends.
+        </div>
+      </div>
+
+      <div class="open-chat">
+        <div class="open-chat__title">
+          <span class="open-chat__title-title">Open Chat</span>
+          <span class="open-chat__title-link"
+            >Go to Openchat Home<i class="fas fa-chevron-right fa-sm"></i
+          ></span>
+        </div>
+        <div class="open-chat__contents">
+          <div class="open-chat__contents-text">
+            <div class="open-chat__contents-text__hashtags">
+              <span>#BTS</span>
+              <span>#bts#army#friends</span>
+            </div>
+            <div class="open-chat__contents-text__members">
+              <img
+                src="https://mblogthumb-phinf.pstatic.net/20141013_39/botos__1413177276768iNSul_JPEG/003.jpg?type=w2"
+              />
+              <span>802 members</span>
+              <span>Active</span>
+              <!-- 일자형 바 만들기 -->
+            </div>
+          </div>
+          <div class="open-chat__contents-photo">
+            <img
+              src="https://lh3.googleusercontent.com/proxy/Cx1RW5EafhvMY0_woaER94IYXfRbaZI7TF834ESoHzKa68UVab26fdkkIOaPzeSwGEL6ThCXqvBM0UbuL0EsgcOHfHOZmw_Omm7CEmQlTCWe"
+            />
+            <span><i class="fas fa-heartbeat"></i>326</span>
+            <!-- 아이콘 수정하기 -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__btn">
+          <a class="nav__link" href="friends.html"
+            ><i class="far fa-user fa-2x"></i>
+          </a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="chats.html"
+            ><i class="fas fa-comment fa-2x"></i>
+            <div class="nav__chat-notification">1</div>
+          </a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="search.html"
+            ><i class="fas fa-search fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="more.html"
+            ><i class="fas fa-ellipsis-h fa-2x"></i>
+            <div class="nav__ellipsis-point"></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script
+      src="https://kit.fontawesome.com/90c725d086.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
