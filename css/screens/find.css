@@ -83,8 +83,40 @@
   font-weight: 600;
 }
 
+.open-chat__contents-photo {
+  display: flex;
+  position: relative;
+}
+
 .open-chat__contents-photo img {
   width: 100px;
   height: 100px;
   border-radius: 10px;
+}
+
+.open-chat__contents-text__members div {
+  width: 1px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-right: 8px;
+}
+
+.open-chat__contents-photo span {
+  width: 56px;
+  height: 22px;
+  display: flex;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border-radius: 10px;
+  font-size: 13px;
+  justify-content: center;
+  align-items: center;
+  bottom: 8px;
+  right: 8px;
+}
+
+.open-chat__contents-photo i {
+  padding-right: 5px;
+  font-size: 10px;
 }

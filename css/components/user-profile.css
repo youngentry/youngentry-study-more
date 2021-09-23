@@ -24,9 +24,19 @@
 }
 
 .user-profile__info {
+  text-align: center;
+}
+
+.user-profile__info span {
   font-size: 15px;
   font-weight: 400;
   opacity: 0.4;
+}
+
+.user-profile__info i {
+  font-size: 15px;
+  color: red;
+  opacity: 0.5;
 }
 
 .channel {
@@ -89,6 +99,10 @@
   margin-left: 20px;
 }
 
-.user-profile__column i {
+.fa-chevron-right {
   opacity: 0.4;
+}
+
+.fa-address-card {
+  font-size: 40px;
 }

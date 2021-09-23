@@ -1,0 +1,15 @@
+.suggestions-column {
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+}
+
+.suggetions-column__title {
+  padding-top: 30px;
+  border-top: var(--border);
+}
+
+.suggetions-column__title {
+  font-size: 20px;
+  font-weight: 600;
+}

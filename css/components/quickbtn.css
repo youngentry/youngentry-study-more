@@ -23,3 +23,17 @@
   font-size: 18px;
   text-align: center;
 }
+
+.contacts-column__icon:nth-child(2) span {
+  position: relative;
+}
+
+.contacts-column__icon:nth-child(2) span > div {
+  height: 7px;
+  width: 7px;
+  background-color: tomato;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
