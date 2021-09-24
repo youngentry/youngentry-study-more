@@ -30,3 +30,17 @@
   margin-left: 7px;
   opacity: 0.2;
 }
+
+.screen-header__icons i {
+  position: relative;
+}
+
+.screen-header__icons i > div {
+  width: 5px;
+  height: 5px;
+  background-color: tomato;
+  border-radius: 50%;
+  position: absolute;
+  right: -6px;
+  top: -4px;
+}
