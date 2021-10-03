@@ -1,12 +1,18 @@
+#resolution {
+  color: rgba(255, 255, 255, 0.767);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin: 4px 1px;
+  padding: 2px 4px;
+}
+
 #section-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
   color: black;
   font-size: 15px;
   font-weight: 900;
-  position: fixed;
   top: 2px;
+  left: 490px;
 }
 
 main {

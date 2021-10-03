@@ -8,19 +8,18 @@
 }
 
 .quote-content {
-  margin-top: 10px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .quote-author {
   font-weight: 600;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 
 .quote-button {
   position: absolute;
-  bottom: 8px;
+  bottom: 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 2px 8px;
 }

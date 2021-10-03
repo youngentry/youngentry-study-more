@@ -1,15 +1,19 @@
 @import "reset.css";
 @import "layout.css";
+@import "reset-trans-btn.css";
+@import "change-bg-btn.css";
 
 /* square 1~9 */
 @import "squares/square.css";
 @import "squares/square1.css";
 @import "squares/square2.css";
 @import "squares/square3.css";
+@import "squares/square4.css";
 @import "squares/square5.css";
 @import "squares/square6.css";
 @import "squares/square7.css";
 @import "squares/square8.css";
+@import "squares/square9.css";
 
 .hidden {
   display: none;

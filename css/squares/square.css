@@ -44,13 +44,13 @@ i {
 }
 
 button {
-  background: #efefef;
-  color: black;
+  background: rgb(44, 42, 42);
+  color: #efefef;
   transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
 }
 
 button:hover {
-  background: rgb(148, 186, 233);
+  background: rgb(132, 169, 212);
   color: white;
 }
