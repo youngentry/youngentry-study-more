@@ -1,0 +1,26 @@
+#section-third > .column {
+  position: relative;
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-content {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.quote-author {
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+.quote-button {
+  position: absolute;
+  bottom: 8px;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 8px;
+}

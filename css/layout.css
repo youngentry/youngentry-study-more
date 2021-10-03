@@ -27,14 +27,8 @@ section {
   border-radius: 20px;
 }
 
-#section-first {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-#section-second {
-  background: rgba(0, 0, 0, 0.2);
-}
-
+#section-first,
+#section-second,
 #section-third {
   background: rgba(0, 0, 0, 0.2);
 }
@@ -45,6 +39,10 @@ section {
   width: 33%;
   margin: 0 15px;
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 10px;
+}
+
+#section-second .column:last-child {
+  padding: 0px;
 }

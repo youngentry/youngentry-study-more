@@ -2,11 +2,14 @@
 @import "layout.css";
 
 /* square 1~9 */
-@import "square.css";
-@import "square1.css";
-@import "square2.css";
-@import "square3.css";
-@import "square5.css";
+@import "squares/square.css";
+@import "squares/square1.css";
+@import "squares/square2.css";
+@import "squares/square3.css";
+@import "squares/square5.css";
+@import "squares/square6.css";
+@import "squares/square7.css";
+@import "squares/square8.css";
 
 .hidden {
   display: none;
@@ -21,4 +24,3 @@ img {
   left: 0;
   z-index: -1;
 }
-

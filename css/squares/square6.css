@@ -1,0 +1,13 @@
+iframe {
+  border-radius: 14px;
+  width: 300px;
+  height: 180px;
+  opacity: 0.4;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+iframe:hover {
+  opacity: 1;
+}
