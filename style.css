@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #f3f3f5;
+}
+
+#screen {
+  display: flex;
+  flex-direction: row;
+}
+
+#first-screen {
+  position: relative;
+}
+
+#first-screen,
+#second-screen {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 10px;
+  margin: 50px;
+  width: 270px;
+  height: 620px;
+  background: white;
+  border-radius: 20px;
+}
+
+.top-icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.album {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.album--image {
+  margin-top: 17px;
+}
+
+.album--image img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.album--artist {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+.album--genre {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.shuffle {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  padding: 0 12px;
+}
+
+.shuffle-button,
+.shuffle-like {
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 12px;
+}
+.shuffle-like {
+  padding: 10px 20px;
+}
+
+.shuffle-button,
+.shuffle-like,
+.song-lists__column:nth-child(2),
+.play-tap,
+.play-button div {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.shuffle-button {
+  color: white;
+  background: #222222;
+}
+.shuffle-like i {
+  margin-right: 5px;
+}
+
+.shuffle span {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+#second-screen > .album {
+  margin-top: 50px;
+}
+
+.second-scrren--ablum img {
+  width: 195px;
+  height: 195px;
+  border-radius: 20px;
+  box-shadow: 0px 15px 20px rgba(235, 61, 9, 0.4);
+  margin-bottom: 20px;
+}
+
+.song-lists {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.song-lists__column {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 11px;
+}
+
+.song-lists__column--image img {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 18px;
+}
+
+.song-lists__column--title {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0;
+  margin-right: 60px;
+}
+
+.song-lists__column--title span:first-child,
+.play-tap--song-name span:first-child {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.song-lists__column--title span:last-child,
+.play-tap--song-name span:last-child {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 2px 0;
+  margin-top: 5px;
+}
+
+.song-lists__column:nth-child(2) {
+  justify-content: flex-start;
+  border-radius: 8px;
+}
+
+.song-lists__column div:last-child {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.play-tap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 20px;
+  background: #222222;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.play-tap--song-name {
+  display: flex;
+  flex-direction: column;
+  margin-right: 34px;
+}
+
+.play-tap--song-name span:first-child {
+  color: rgb(189, 189, 189);
+}
+
+.play-tap--song-name span:last-child {
+  color: white;
+}
+
+.play-tap--button {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.play-tap--button i:first-child,
+.play-tap--button i:last-child {
+  font-size: 12px;
+}
+
+.play-tap--button i:nth-child(2) {
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+.play-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-time span {
+  margin-top: 30px;
+  padding: 7px 14px;
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+}
+
+.play-at {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.play-at div {
+  background: #2c2c2c;
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+}
+
+.play-at div:first-child {
+  width: 150px;
+  height: 4px;
+  border-top-right-radius: none;
+  border-bottom-right-radius: none;
+}
+
+.play-at div:nth-child(2) {
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.9);
+}
+
+.play-at div:last-child {
+  width: 104px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.185);
+  border-top-left-radius: none;
+  border-bottom-left-radius: none;
+}
+
+.play-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  margin-top: 50px;
+}
+
+.play-button div {
+  padding: 18px;
+  border-radius: 50%;
+  background: #222222;
+}
+
+.play-button i:nth-child(1),
+.play-button i:nth-child(5) {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+}
+
+.play-button div > i {
+  font-size: 100px;
+}
