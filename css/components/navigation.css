@@ -1,6 +1,6 @@
 .nav {
   background-color: #f8f6f69a;
-  padding: 20px 60px;
+
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -18,6 +18,28 @@
   position: relative;
 }
 
+.nav__btn {
+  padding: 20px 60px;
+  transition: 0.2s ease-in-out;
+}
+
+.nav__btn:hover {
+  transform: scale(1.2);
+}
+
+@keyframes notification-flipping {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-5px);
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
 .nav__chat-notification {
   display: flex;
   flex-direction: column;
@@ -32,6 +54,7 @@
   font-size: 12px;
   bottom: 18px;
   left: 22px;
+  animation: notification-flipping 1s ease-in-out infinite;
 }
 
 .nav__ellipsis-point {
