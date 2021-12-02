@@ -1,10 +1,34 @@
-# print("a" + "b") # 띄워쓰기 없이 연달아 입력
-# print("a", "b") # 띄워쓰기 한 칸이 입력
+# 주어진 코드를 활용하여 부동산 프로그램을 작성하시오.
 
-# 방법 1
-print("나는 %d살입니다." % 20) # %의 자리에 정수 digit를 넣겠다
-print("나는 %s을 좋아해요." % "파이썬" ) # %의 자리에 str을 넣겠다
-print("Apple 은 %c로 시작해요." % "A") # %의 자리에 c(character)를 넣겠다
+# (출력 예제)
+# 총 3대의 매물이 있습니다.
+# 강남 아파트 매매 10억 2010년
+# 마포 오피스텔 전세 5억 2007년
+# 송파 빌라 월세 500/50 2000년
 
-print("나는 %s살입니다." % 20) # %의 자리에 str 타입으로 20을 넣겠다
-print("나는 $s색과 %s색을 좋아해요." % ("파란", "빨간"))
+# [코드]
+class House:
+    # 매물 초기화
+    def __init__(self, location, house_type, deal_type, price, completion_year):
+        self.location = location
+        self.house_type = house_type
+        self.deal_type = deal_type
+        self.price = price
+        self.completion_year = completion_year
+
+    # 매물 정보 표시
+    def show_detail(self):
+        print(self.location,self.house_type, self.deal_type, self.price, self.completion_year )
+
+houses = []
+a1 = House("강남", "아파트", "매매","10억","2010년")
+a2 = House("마포", "아파트", "매매","10억","2010년")
+a3 = House("송파", "아파트", "매매","10억","2010년")
+
+houses.append(a1)
+houses.append(a2)
+houses.append(a3)
+
+print("총 {0}대의 매물이 있습니다.".format(len(houses)))
+for a in houses:
+    a.show_detail()
