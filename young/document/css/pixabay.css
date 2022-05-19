@@ -40,11 +40,12 @@
 
 .basic .account-related__popup-box {
   display: flex;
+  box-sizing: border-box;
   position: absolute;
-  top: 65px;
+  top: 62px;
   right: 265px;
   width: 510px;
-  height: 378px;
+  height: 370px;
   background: #333;
 }
 
@@ -52,11 +53,64 @@
   display: none;
 }
 
-.basic .account-related__popup-box .section ul {
+.basic .section {
   display: flex;
-
+  background: #191b26;
 }
 
+.basic .section01 {
+  width: 146px;
+  border-right: 1px solid rgb(121, 120, 120);
+  padding: 0 0 0 5px;
+}
+.basic .section02 {
+  width: 182px;
+  border-right: 1px solid rgb(121, 120, 120);
+}
+.basic .section03 {
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+}
+
+.basic .account-related__popup-box .section ul {
+  display: flex;
+  flex-direction: column;
+  background: #191b26;
+  color: white;
+}
+
+.basic .account-related__popup-box ul {
+  gap: 0;
+}
+.basic .account-related__popup-box ul li {
+  height: 0;
+  padding: 18px 10px;
+  font-size: 14px;
+}
+
+.basic .account-related__popup-box ul li:first-child {
+  font-weight: 900;
+}
+
+.basic .section03 .language {
+  font-size: 16px;
+  padding: 0 15px 25px 15px;
+  border-bottom: 1px solid rgb(121, 120, 120);
+  color: white;
+}
+
+.basic .section03 .language i {
+  margin: 0 5px 0 0;
+}
+
+.basic .section03 .sns-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  color: gray;
+  font-weight: 900;
+}
 
 .basic02 {
   display: flex;
@@ -74,11 +128,11 @@
 .basic02 h2 {
   font-size: 30px;
   font-weight: bolder;
-  margin: 0 0 30px 0;
+  margin: 8px 0 30px 0;
 }
 
 .basic02 .description {
-  margin: 0 0 36px 0;
+  margin: 0 0 35px 0;
 }
 
 .basic02 .search-box {
@@ -88,7 +142,7 @@
   background: white;
   color: gray;
   width: 800px;
-  padding: 20px;
+  padding: 22px;
   margin: 0 0 10px 0;
 }
 
