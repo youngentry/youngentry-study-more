@@ -24,12 +24,51 @@
             <li>효과</li>
             <li class="account-related">
               둘러보기
-              <div class="icon"></div>
+              <i>dw-ar-i</i>
             </li>
+            <div class="account-related__popup-box">
+              <div class="section">
+                <ul class="media">
+                  <li>Media</li>
+                  <li>에디터스 초이스</li>
+                  <li>인기 이미지</li>
+                  <li>인기 동영상</li>
+                  <li>인기 검색어</li>
+                </ul>
+              </div>
+              <div class="section">
+                <ul class="community">
+                  <li>Community</li>
+                  <li>블로그</li>
+                  <li>포럼</li>
+                  <li>아티스트</li>
+                  <li>카메라</li>
+                </ul>
+              </div>
+              <div class="section">
+                <ul class="pixabay-information">
+                  <li>Pixbay 소개</li>
+                  <li>자주묻는질문</li>
+                  <li>약관</li>
+                  <li>개인정보 보호 정책</li>
+                  <li>Pixabay 소개</li>
+                  <li>Cookie Policy</li>
+                  <li>API</li>
+                </ul>
+                <div class="language"><i>la-i</i>언어</div>
+                <div>
+                  <ul class="sns">
+                    <li>fa-i</li>
+                    <li>ins-i</li>
+                    <li>tw-i</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <li>로그인</li>
             <li>가입</li>
             <li>
-              <div class="icon"></div>
+              <i>down-laod-i</i>
               업로드
             </li>
           </ul>
@@ -43,12 +82,12 @@
           우리의 관대한 커뮤니티를 통해 공유되는 2.6 백만개의 이미지와 비디오를
           살펴보세요.
         </p>
-        <div class="search-box">
-          <div><i>mag-i</i></div>
-          <div>이미지, 벡터, 동영상, 음악 검색</div>
-          <div>이미지</div>
-          <div><i>do-ar-i</i></div>
-        </div>
+        <ul class="search-box">
+          <i>mag-i</i>
+          <li>이미지, 벡터, 동영상, 음악 검색</li>
+          <li class="image">이미지</li>
+          <i>do-ar-i</i>
+        </ul>
         <p class="popular-search">
           인기 검색어: 꽃, 바다, 배경, 카네이션, 하늘, 사람, 자연, 가족, 커피,
           나무, 돈, 여름
@@ -56,5 +95,14 @@
         <p class="free-image-letter">ily...의 무료 이미지</p>
       </div>
     </header>
+    <script>
+      document
+        .querySelector(".account-related")
+        .addEventListener("click", function () {
+          document
+            .querySelector(".account-related__popup-box")
+            .classList.toggle("on");
+        });
+    </script>
   </body>
 </html>
