@@ -1,6 +1,5 @@
 .basic {
   display: flex;
-  background: red;
   justify-content: center;
 }
 
@@ -8,10 +7,11 @@
   display: flex;
   width: 1800px;
   justify-content: space-between;
-  background: blue;
+  margin: 0 30px;
 }
 
 .basic h1 {
+  margin: 16px 60px 0 0;
   background: white;
 }
 
@@ -23,12 +23,14 @@
 
 .basic ul {
   display: flex;
+  position: relative;
   flex: 1;
-  background: green;
+  background: rgb(255, 255, 255);
+  gap: 25px;
 }
 
 .basic li {
-  padding: 20px;
+  padding: 23px 0;
   font-size: 14px;
 }
 
@@ -36,10 +38,30 @@
   margin: 0 0 0 auto;
 }
 
+.basic .account-related__popup-box {
+  display: flex;
+  position: absolute;
+  top: 65px;
+  right: 265px;
+  width: 510px;
+  height: 378px;
+  background: #333;
+}
+
+.basic .account-related__popup-box.on {
+  display: none;
+}
+
+.basic .account-related__popup-box .section ul {
+  display: flex;
+
+}
+
+
 .basic02 {
   display: flex;
   width: 100%;
-  background-color: purple;
+  background-color: rgb(155, 113, 155);
   justify-content: center;
   text-align: center;
   color: white;
@@ -61,4 +83,34 @@
 
 .basic02 .search-box {
   display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background: white;
+  color: gray;
+  width: 800px;
+  padding: 20px;
+  margin: 0 0 10px 0;
+}
+
+.search-box i:first-child {
+  margin: 0 18px 0 0;
+}
+
+.basic02 .search-box .image {
+  margin: 0 0 0 auto;
+}
+
+.basic02 .search-box i:last-child {
+  margin: 0 0 0 18px;
+}
+
+.basic02 .popular-search {
+  margin: 0 0 135px 0;
+  font-size: 12px;
+  color: rgb(218, 218, 218);
+}
+
+.basic02 .free-image-letter {
+  font-size: 14px;
+  margin: 0 0 38px 0;
 }
