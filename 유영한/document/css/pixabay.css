@@ -1,0 +1,64 @@
+.basic {
+  display: flex;
+  background: red;
+  justify-content: center;
+}
+
+.basic .container {
+  display: flex;
+  width: 1800px;
+  justify-content: space-between;
+  background: blue;
+}
+
+.basic h1 {
+  background: white;
+}
+
+.basic nav {
+  display: flex;
+  flex: 1;
+  background: yellow;
+}
+
+.basic ul {
+  display: flex;
+  flex: 1;
+  background: green;
+}
+
+.basic li {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.basic .account-related {
+  margin: 0 0 0 auto;
+}
+
+.basic02 {
+  display: flex;
+  width: 100%;
+  background-color: purple;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.basic02 .container {
+  margin: 150px 0 0 0;
+}
+
+.basic02 h2 {
+  font-size: 30px;
+  font-weight: bolder;
+  margin: 0 0 30px 0;
+}
+
+.basic02 .description {
+  margin: 0 0 36px 0;
+}
+
+.basic02 .search-box {
+  display: flex;
+}
