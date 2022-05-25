@@ -144,7 +144,7 @@ body {
 .basic02 {
   display: flex;
   width: 100%;
-  background-color: rgb(155, 113, 155);
+  background: rgba(255, 0, 0, 0.555) url(../img/pb_main-image.webp) no-repeat center center/cover;
   justify-content: center;
   text-align: center;
   color: white;
@@ -169,6 +169,7 @@ body {
   box-sizing: border-box;
   justify-content: space-between;
   background: white;
+  border-radius: 10px;
   color: gray;
   width: 800px;
   padding: 22px;
