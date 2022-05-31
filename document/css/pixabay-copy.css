@@ -1,0 +1,94 @@
+.basic {
+  display: flex;
+  width: 100%;
+  height: 58px;
+  background: #ddd;
+  justify-content: center;
+}
+.basic .container {
+  display: flex;
+  width: 1800px;
+  margin-top: 6px;
+}
+
+.basic nav,
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-related {
+  margin: 0 0 0 auto;
+}
+
+.nav-right i {
+  margin: 0 10px;
+}
+
+.basic02 {
+  display: flex;
+  width: 100%;
+  height: 537px;
+  background: rgb(151, 111, 111);
+  justify-content: center;
+}
+
+.basic02 .container {
+  text-align: center;
+  margin-top: 170px;
+}
+.basic02 .container h2,
+p {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.basic02 .container h2 {
+  font-size: 33px;
+  font-weight: bold;
+}
+
+.basic02 .container p {
+  font-size: 16px;
+}
+
+.search-box {
+  display: flex;
+  width: 800px;
+  padding: 23px 18px;
+  background: white;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  color: gray;
+}
+
+.search-box__left {
+  display: flex;
+}
+
+.search-box__left i {
+  margin-right: 15px;
+}
+
+.search-box__right {
+  display: flex;
+}
+
+.search-box__right i {
+  margin-left: 15px;
+}
+
+.basic02 p.description {
+  margin-bottom: 40px;
+}
+
+.basic02 p.popular-search {
+  font-size: 12px;
+  color: rgb(218, 211, 202);
+  margin-bottom: 110px;
+}
+
+.basic02 p.free-image-letter {
+  font-size: 14px;
+}
