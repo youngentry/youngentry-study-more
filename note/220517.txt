@@ -1,0 +1,382 @@
+jquery를 배우는 이유
+리액트를 하게 되면 jquery는 쓸 일이 거의 없으나,
+실제로 리액트만으로 개발하는 기업은 적고 95%는 옛날 방식으로 짜여있습니다.
+리액트 jquery 라이브러리의 일종 > 플러그인, 프레임워크 
+
+/////////////////
+
+box의 기본성질
+0. display : block
+1. transparent
+2. width : auto, height : auto
+3. vertical 옆으로 오는 것을 허용하지 않습니다.
+
+inline의 기본성질
+display : inline
+1. transparent
+2. width / height 가 없습니다.
+3. horizontal 옆으로 오는 것을 허용합니다.
+
+display : flex
+box는 기본적으로 옆으로 오는 것을 허용하지 않지만 display : flex를 통해서 옆으로 올 수 있게 합니다.
+
+/////////////////
+
+position은 기본적으로 겹치는 상황에서 이용합니다.
+
+//////////////
+폴더별로 정리는 필수입니다.
+image
+css
+js 
+
+/////////////
+경로 입력 방식입니다.
+./ 형제 폴더 
+../ 부모 폴더
+../../ 부모 폴더의 부모 폴더로
+
+/////////////////
+index는 생략되기 때문에 사용합니다.
+
+///////////
+ol
+li 도 박스
+
+모든 inline 글자를 제외하고는 모두 박스입니다.
+
+//////////////////
+index.html 에서 형제 파일로 이동하기 위해서는 파일 이름만 링크하면 됩니다.
+
+다른 폴더 안의 파일로 이동하기 위해서는 
+./형제폴더이름/파일이름
+../부모폴더이름/파일이름
+
+        <a href="./doc/box01.html" target="_blank">box 01</a>
+형제 레벨의 doc 폴더 안의 box01.html 파일을 엽니다.
+target="_blank" : 새 탭에서 열기
+
+    <a href="../index.html">맨 앞으로</a>
+상대적으로 작동하기 때문에 "상대경로"라고 부릅니다.
+
+    <a href=""http://naver.com">box 01</a> 
+http:// 에 등록한 경로를 "절대경로"라고 부릅니다.
+
+/////////////////////////
+주석 정리하는 방법
+    <ul>
+        <li>
+            <!-- 
+                2022.05.17 young // 누가 언제 했음을 기록합니다.
+                경로 // 기록할 내용의 제목입니다.
+                ./ 나의 형제 레벨
+                ../ 나의 부모 레벨 
+            -->
+            <a href=""http://naver.com">box 01</a>
+            <p>태그의 일반적인 성질에 대해서 배웁니다.</p>
+        </li>
+    </ul>
+
+////////////////////////////////
+css 스타일 적용시키는 방법 
+    <link rel="stylesheet" href="../css/box01.css" />
+  </head>
+헤드 안에 적용합니다.
+
+////////////////////////////////////////////////
+
+link로 연결하는 등의 동작은 모듈화(캡슐화)의 개념입니다.
+box01.html 파일
+
+<body>
+    <h1>박스의 기본 성질</h1>
+    <a href="../index.html">맨 앞으로</a>
+    <hr> <!-- 가로로 선을 긋기, 많이 안 쓰지만 레이아웃을 잡기 위해서 사용합니다. -->
+    <link rel="stylesheet" href="../css/box01.css">
+</body>
+
+link 로 연결을 해주면 적용이 됩니다.
+
+box01.css 파일
+h1 {
+  color: red;
+}
+
+/////////////////////////////////
+class 이름으로 선택할 수 있습니다.
+
+.box01 {
+    background: #f00; /*빨간색*/
+}
+.box02 {
+    background: #ff0; /*노란색*/
+}
+.box03 {
+    background: #0f0; /*녹색*/
+}
+
+////////////////////////////
+width : 50%
+부모(body)를 기준으로 50%가 적용됩니다.
+
+.box01 {
+  width: 50%;
+  background: #f00; /*빨간색*/
+}
+
+//////
+
+margin 바깥쪽으로 띄웁니다.
+padding 안쪽으로 띄웁니다.
+
+.box02 {
+  margin-left: 100px;
+  width: 100%;
+  background: #ff0; /*노란색*/
+}
+
+//////////
+width : 100% 와 auto 의 차이
+}
+.box02 {
+  margin-left: 100px;
+  width: 100%;
+  background: #ff0; /*노란색*/
+}
+width : 100%는 (부모)박스를 기준으로 100%입니다. 크기가 변하지 않습니다.
+
+
+.box03 {
+  margin-left: 100px;
+  background: #0f0; /*녹색*/
+}
+auto 는 상대적입니다. margin-left 로 왼쪽에서 줄어든 만큼 크기가 변합니다.
+
+/////////////
+
+빛의 삼원색
+color:#fff; /*흰색*/
+background: #f00;
+background: #ff0;
+background: #0f0;
+
+red green blue 
+Full 0 0
+Full Full 0
+0 Full 0
+
+////////////////////////////
+
+축약형 
+margin: 0; // margin(-top, right, bottom, left) 대신에 margin: 0 만을 입력하면 됩니다.
+margin: 0; = margin: 0 0 0 0; (상 우 하 좌)
+
+body{
+    margin: 0 0 0 0;
+}
+
+////////////////////
+margin: auto 중요합니다. 가운데로 위치합니다.
+
+홈페이지를 만들 때의 표준 사이즈는 1200px 입니다.
+
+.box00{
+    width: 1200px;
+    margin: 0 auto;
+    background: #333;
+    color:#fff; /*흰색*/
+}
+박스를 가운데로 위치하기 magin: 0 auto;
+
+/////////////////////
+
+short cut 
+.box01 을입력하면 
+
+    <div class="box01">    </div> 
+
+위가 자동으로 생성됩니다.
+
+//////////////
+중요한 박스 성질
+*{
+    box-sizing: border-box; // 모든 박스 사이즈에서 border와 padding을 width 안쪽으로 밀어넣습니다.
+}
+
+.box{
+    width: 600px;
+    border: 1px solid #333; // border: 1px 로 solid 스타일로 #333 색상을 부여합니다.
+}
+border로 인해서 box 사이즈가 600이 아닌 602가 되었습니다.
+
+
+.box02 {
+    padding: 30px;
+    background: #f00;
+}
+padding이 더해져 box 사이즈가 662가 되었습니다.
+
+
+이 크기 성질을 해결하기 위해서 모든 box에 box-sizing: border-box; 를 지정합니다.
+
+/////////////////////////////////
+
+margin 겹침 현상
+
+.box{
+    margin:30px auto;
+    width: 600px;
+    border: 1px solid #333;
+}
+margin : 30px; 설정대로라면 박스 사이의 간격이 30px이 되어야 합니다. 
+따라서 박스 사이의 margin은 위 아래 더해 총 60px이 되어야 합니다.
+
+
+하지만 margin은 아래 위로 겹칩니다.
+부모 자식간에도 겹칩니다.
+
+따라서 박스 사이의 margin이 30px이 됩니다.
+이 문제로 인해서 margin 사이즈는 한 방향으로만 지정합니다.
+
+
+////////////////////////
+글자 성질의 tag
+
+    <strong class="box box03">Lorem ipsum dolor sit.</strong>
+사이즈를 줄 수 없습니다.
+아래 위로 margin padding 이 적용이안됩니다.
+좌우로 margin padding 은 적용이 됩니다.
+
+
+기본적인 글자 성질을 지니고 공간을 차지하지 않음에도
+padding 자체는 시각적으로 적용됩니다.
+<글자padding적용예시.이미지 삽입>
+
+//////////////////////
+inline, block 성질 바꾸기
+display: inline; display: block; 
+
+박스 성질의 div 를 display: inline 으로 글자성질로 바꾸거나
+    <div class="box box03">Lorem ipsum dolor sit.</div>
+.box03 {
+    display: inline;
+    margin: 100px auto;
+    padding: 100px 30px;
+}
+
+글자 성질의 strong 을 display: block 으로 박스성질로 바꿀 수 있습니다.
+    <strong class="box box03">Lorem ipsum dolor sit.</strong>
+.box03 {
+    display: block;
+    margin: 100px auto;
+    padding: 100px 30px;
+}
+
+////////////////////////////////
+
+Alt + Z 시각적으로 긴 한 줄을 여러줄로 보이게 하기
+
+///////////////////////
+reset.css를 만들어 link로 연결합니다.
+
+reset은 최우선 순위로 적용시켜야 합니다.
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/box03.css">
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  box-sizing: border-box; // 중요합니다.
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  line-height: 1; // 중요합니다.
+}
+
+/////////////////////////
+
+display: flex 
+box를 가로로 배열합니다.
+auto가 적용됩니다. auto를 통해 사이즈에 맞춰 작아집니다.
+
+.basic01 .container {
+  display: flex;
+  gap:30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/////////////////////////////
+img는 기본적으로 inline 속성을 가지고 있습니다.
+동시에 block의 성질도 지니고 있어 크기를 지정할 수 있습니다. (이를 display :inline-block 이라고 합니다.)
+
+.basic01 .container img{
+    width: 100%;
+}
+
+////////////////////////////
+서로 다른 사이즈의 이미지를 동일하게 만들 수 있습니다.
+
+.basic01 figure {
+    flex: 1;
+}
+모든 figure 는 flex: 1 에 맞춰서 크기가 변합니다.
+
+internet explorer 에서는 먹히지 않습니다. 
+(옛날 프로젝트에는 적용이 안되기 때문에 문법 문제 등이 발생할 수 있습니다.)
+
+///////////////////////////////////////////
+
+.basic01 {
+  padding: 100px 0; /*표준사이즈 입니다./
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.basic01 h2 {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+.basic01 p {
+  font-size: 15px;
+  margin: 0 0 30px 0;
+}
+
+.basic01 .container {
+  display: flex;
+  gap:30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.basic01 .container img{
+    width: 100%;
+}
+
+.basic01 figure {
+    flex: 1;
+}
+
+///////////////////////////////////////
+
+
+
+
+
+
+
+
