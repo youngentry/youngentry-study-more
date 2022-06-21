@@ -372,7 +372,6 @@
 /* ↓ @@.fixedBg2 ↓ */
 .fixedBg2 {
   padding: 100px 0;
-  margin: 100px 0 0 0;
   text-align: center;
   color: #fff;
   background: url(../img/mainvisual01.jpg) no-repeat fixed center center/cover;
