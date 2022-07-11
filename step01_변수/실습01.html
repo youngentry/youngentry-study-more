@@ -9,10 +9,8 @@
   <body>
     <div id="box2" onmouseenter="글자바꾸기2(this)" onmouseleave="글자바꾸기3(this)">come on</div>
     <div id="box3" onclick="글자바꾸기4(this)">click me</div>
-    <button id="reset">
-      reset
-    </button>
-    <div id="resetCount" "resetCount(this)"></div>
+    <button id="reset" onclick="리셋()">reset</button>
+    <div id="resetCount">reset count</div>
   </body>
   <script>
     const BOX2 = document.getElementById("box2");
@@ -30,19 +28,20 @@
       c.innerText = `I'm clicked!`;
       console.log("bbb");
     };
-    const 리셋 = function (c) {
+    const 리셋 = function () {
       BOX2.innerText = "come on";
       BOX3.innerText = "click me";
     };
-    let count = 0;
-    const    resetCount =('click', function({ 
+    리셋();
 
-        const resetBox = document.getElementById("resetCount");
-        count++;
-        console.log(count);
-        resetBox.innerText = count;
-    })  ) 
-    resetCount()
+    let count = 0;
+    const resetBox = document.getElementById("reset");
+    const resetCount = document.getElementById("resetCount");
+    resetBox.addEventListener("click", () => {
+      count++;
+      console.log(count);
+      resetCount.innerText = "reset count :" + count;
+    });
 
     // BOX3.addEventListener("mouseenter", 글자바꾸기2);
     // BOX3.addEventListener("mouseleave", 글자바꾸기2);
