@@ -12,11 +12,27 @@
       <a href="#">타겟</a>
     </div>
 
+    <ul id="UL">
+      <li>menu01</li>
+      <li>menu02</li>
+      <li>menu03</li>
+    </ul>
+
     <script>
       const App = document.querySelector("#App");
+      const UL = document.querySelector("#UL");
 
       App.addEventListener("click", (event) => {
         console.log(event.target, event.currentTarget);
+      });
+
+      UL.addEventListener("click", (e) => {
+        let TG = e.target;
+        console.log(TG);
+        const AllLI = [...UL.children];
+        console.log(AllLI);
+        AllLI.forEach((e) => (e.style.color = ""));
+        TG.style.color = "#f00";
       });
     </script>
   </body>
