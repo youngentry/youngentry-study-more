@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 02</title>
+  </head>
+  <body>
+    <div id="App">버튼</div>
+    <script>
+      const DIV = document.getElementById("App");
+      const div = (a) => {
+        DIV.innerText = a;
+      };
+      DIV.addEventListener("click", function () {
+        div("콜백함수");
+      });
+    </script>
+  </body>
+</html>

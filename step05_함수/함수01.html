@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 01</title>
+  </head>
+  <body>
+    <div id="App"></div>
+    <script>
+      이름(1, 1);
+      function 이름(a, b = 1000) {
+        console.log(a, b);
+      }
+
+      //함수표현식 변수에 담긴 함수는 호이스팅되지 않습니다.
+      //   이름2();
+      //   const 이름2 = function () {
+      //       console.log("이름2");
+      //     };
+
+      //화살표 함수 표현식 arrow function
+      const 이름3 = (a) => {
+        console.log(a);
+      };
+      이름3("화살표 함수");
+
+      const 한줄화살표함수 = (a, b = "변수여러개") => console.log(a, b);
+      한줄화살표함수("한줄arrowFunction");
+    </script>
+  </body>
+</html>

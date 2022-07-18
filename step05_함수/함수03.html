@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 03</title>
+  </head>
+  <body>
+    <div id="App">
+      <span>스팬</span>
+      <a href="#">타겟</a>
+    </div>
+
+    <script>
+      const App = document.querySelector("#App");
+
+      App.addEventListener("click", (event) => {
+        console.log(event.target, event.currentTarget);
+      });
+    </script>
+  </body>
+</html>
