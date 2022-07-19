@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체 01 - 개발자 객체 생성</title>
+  </head>
+  <body>
+    <div id="App">객체 만들기</div>
+    <div id="App">객체 만들기</div>
+    <script>
+      // 1. 객체 리터럴 표기법을 이용한 객체 생성
+      const young = {
+        name: "영",
+        age: 31,
+      };
+      console.log(young);
+
+      // 2. 객체 생성자함수를 이용한 객체 생성
+      const han = new Object();
+      han.name = "한";
+      han.age = 29;
+      console.log(han);
+
+      // 3. 객체의 메소드 : 객체는 속성(property)과 함수(method)를 가집니다. property (key: value)
+      const you = {
+        name: "유",
+        하는일: function () {
+          console.log("허리 펴기");
+        },
+      };
+      console.log(you["name"], you.name);
+      you.하는일();
+
+      // 4. 객체에서의 this
+      const gentry = {
+        name: "젠트리",
+        age: 19,
+        하는일: function () {
+          console.log(this.name + " 허리 펴기");
+        },
+      };
+      gentry.하는일();
+
+      // 5. 객체의 메소드로 ()=> 화살표 함수
+      const sakura = {
+        name: "벚꽃",
+        age: 19,
+        하는일: () => {
+          console.log(typeof this.name); // 화살표 함수에서의 this는 window입니다.
+          //빈 칸인 것으로 보아 ''과 비슷한 것으로 추정됩니다. 타입 검사를 해보니 string이 출력됩니다.
+          console.log("오치루"); //
+        },
+      };
+      sakura.하는일();
+
+      // 6. 객체 안 일반적인 함수(무명)에서의 this
+      const ame = {
+        name: "비",
+        하는일: function () {
+          setInterval(() => {
+            console.log(this.name + " 후루");
+          }, 1000);
+        },
+      };
+      ame.하는일();
+
+      // etc. 이벤트리스너에서의 this
+      // id는 바로 선택을 할 수 있지만 권장하는 방법이 아닙니다.
+      // document.quarrySelector('#App')와 document.getElementById('App')는 같습니다.
+
+      App.addEventListener("click", function () {
+        console.log(this); // 이벤트리스너 function에서의 this는 App
+      });
+      This.addEventListener("click", () => {
+        console.log(this); // 화살표함수에서의 this는 window
+      });
+      console.log(this); // this는 window
+    </script>
+  </body>
+</html>
