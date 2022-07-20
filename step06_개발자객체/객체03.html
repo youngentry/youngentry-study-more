@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>객체 03 - 구조분해할당</title>
+    <title>객체 03 - 비구조할당</title>
   </head>
+
   <body>
     <p></p>
     <script>
-      // 비구조화할당 javascript 구조분해할당.
-      // 패킹 언패킹과 비슷하지만 위치에 영향을 받지 않고 같은 이름인 변수의 키와 값만이 할당됩니다.
-      const 객체 = {
-        name: "han",
+      // 비구조할당... javascript 구조분해 할당.
+
+      const 걍객체 = {
+        name: "you",
         age: 10,
-        nickname: "young",
+        nickname: "잼민이",
       };
-      const { a, b, c, name } = 객체;
-      console.log(a, name);
+
+      const { age, name } = 걍객체;
+
+      console.log(name);
     </script>
   </body>
 </html>
