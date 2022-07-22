@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시계 01 -copy</title>
+    <style>
+      .clock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 500px;
+        background: url(./clock-42809_640.png) no-repeat center center/cover;
+      }
+      .clock > * {
+        position: absolute;
+        display: block;
+        bottom: 50%;
+        left: 50%;
+        border-radius: 4px;
+        transition: 0.5s;
+      }
+      .clock strong {
+        width: 8px;
+        height: 110px;
+        background: #000;
+        transform: translateX(-50%) rotate(45deg);
+        transform-origin: bottom center;
+      }
+      .clock em {
+        width: 6px;
+        height: 170px;
+        background: #999;
+        transform: translateX(-50%) rotate(45deg);
+        transform-origin: bottom center;
+      }
+      .clock span {
+        width: 2px;
+        height: 220px;
+        background: #f00;
+        transform: translateX(-50%) rotate(45deg);
+        transform-origin: bottom center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <strong></strong>
+      <em></em>
+      <span></span>
+    </div>
+    <script>
+      const hourElement = document.querySelector(".clock strong");
+      const minuteElement = document.querySelector(".clock em");
+      const secondElement = document.querySelector(".clock span");
+
+      const week = ["일", "월", "화", "수", "목", "금", "토"];
+      let h = new Date().getHours();
+      let hDeg = h * (360 / 12);
+      let m = new Date().getMinutes();
+      let mDeg = m * (360 / 60);
+      let s = new Date().getSeconds();
+      let sDeg = s * (360 / 60);
+
+      const hour = () => {
+        hourElement.style.transform = `translateX(-50%) rotate(${hDeg}deg)`;
+        hDeg += 6;
+      };
+      hour();
+      setInterval(hour, 1000 * 60 * (60 - m));
+
+      const minute = () => {
+        minuteElement.style.transform = `translateX(-50%) rotate(${mDeg}deg)`;
+        mDeg += 6;
+      };
+      minute();
+      setInterval(minute, 1000 * (60 - s));
+
+      const second = () => {
+        secondElement.style.transform = `translateX(-50%) rotate(${sDeg}deg)`;
+        sDeg += 6;
+      };
+      second();
+      setInterval(second, 1000);
+    </script>
+  </body>
+</html>
