@@ -1,0 +1,111 @@
+:root {
+    --mc: #0d6efd;
+    --sc: #dc3545;
+    --gc: #ced4da;
+    --lc: #f8f9fa;
+    --dc: #212529;
+}
+
+.mainColor {
+    color: var(--mc);
+}
+
+.basicSection {
+    padding: 100px 0;
+    letter-spacing: -0.025em;
+    font-size: 15px;
+}
+
+.basicSection h2 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.basicSection h2::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--mc);
+    margin: 15px auto;
+}
+
+.basicSection h2 span {
+    color: var(--mc)
+}
+
+.basicSection>p {
+    margin: 0 0 50px 0;
+    font-weight: 300;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    width: 1170px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.inner::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.dotList li {
+    position: relative;
+    padding: 0 0 0 20px;
+    line-height: 1.2;
+    margin: 0 0 5px 0;
+}
+
+.dotList li::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background: var(--sc);
+}
+
+.table {
+    width: 100%;
+    border-top: 3px solid var(--mc);
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.table td {
+    padding: 15px 15px;
+    border-left: 1px solid var(--gc);
+}
+
+.table th {
+    padding: 15px 15px;
+    text-align: left;
+    background: var(--lc);
+    font-weight: 400;
+}
+
+.table tr {
+    border-bottom: 1px solid var(--gc);
+}
+
+.table caption {
+    text-align: right;
+    caption-side: bottom;
+    margin: 10px 0 0 0;
+}
+
+.responsive-table {
+    width: 100%;
+}
