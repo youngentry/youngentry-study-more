@@ -5,7 +5,7 @@ const Nav = () => {
     <nav className="Nav gnb">
       <ul>
         <li>
-          <Link to="/">main</Link>
+          <Link to="/section04">main</Link>
         </li>
         <li>
           <Link to="/section01">sc01</Link>

@@ -11,8 +11,8 @@ const Section04 = () => {
             <img src="./img/main01.jpg" alt="" />
           </figure>
         </div>
-        <div className="left"></div>
-        <div className="right"></div>
+        <div className="left">50%</div>
+        <div className="right">50%</div>
       </div>
     </section>
   );
