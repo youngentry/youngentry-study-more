@@ -1,0 +1,15 @@
+.swiper {
+  position: relative;
+  overflow-x: hidden;
+  height: 600px;
+  background: #ddd;
+}
+
+figure:nth-child(1) {
+  background: #ff0;
+}
+
+.swiper-slide.on {
+  font-size: 100px;
+  transition: 0.5s;
+}
