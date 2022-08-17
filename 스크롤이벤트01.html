@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            height: 100vh;
+            text-align: center;
+            line-height: 100vh;
+            font-size: 100px;
+            font-weight: bolder;
+        }
+
+        section.on {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        01
+    </section>
+    <section>
+        02
+    </section>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+
+            const SEC = document.querySelectorAll('section');
+            window.addEventListener('scroll', () => {
+                let SCT = window.scrollY;
+                const scrollHandler = (ele, idx) => {
+                    let THIS_HEIGHT = ele.offsetTop;
+                    SCT > THIS_HEIGHT
+                        ? ele.classList.add('on')
+                        : ele.classList.remove('on')
+                }
+                SEC.forEach(scrollHandler);
+            });
+
+        })
+    </script>
+</body>
+
+</html>

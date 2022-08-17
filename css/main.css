@@ -1,15 +1,51 @@
-.swiper {
-  position: relative;
-  overflow-x: hidden;
-  height: 600px;
-  background: #ddd;
+.Wrap {
+    position: relative;
+
 }
 
-figure:nth-child(1) {
-  background: #ff0;
+#Header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 1900px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    line-height: 77px;
+    transition: 0.5s;
 }
 
-.swiper-slide.on {
-  font-size: 100px;
-  transition: 0.5s;
+#Header.on {
+    background: rgba(0, 0, 0, 1);
+}
+
+.Gnb ul {
+    display: flex;
+    gap: 30px;
+}
+
+.tel {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.tel i {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 50%;
+    transform: translateY(-5px);
+    margin: 0 10px 0 0;
+}
+
+.screvent {
+    height: 200vh;
+}
+
+#MainVisual {
+    height: 200vh;
+    background: url(../images/bg_intro01.jpg) repeat-x;
 }
