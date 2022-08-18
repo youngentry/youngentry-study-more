@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="txt"></ul>
+    <button class="push">주기</button>
+    <button class="pull">받기</button>
+    <script>
+        const DATA = [
+            { id: 1, name: "이창훈", age: 15 },
+            { id: 2, name: "정창훈", age: 25 },
+            { id: 3, name: "손창훈", age: 35 },
+            { id: 4, name: "박창훈", age: 45 }
+        ];
+
+        document.querySelector('.push').addEventListener('click', () => {
+            localStorage.setItem('data', JSON.stringify(DATA))
+        });
+
+        document.querySelector('.pull').addEventListener('click', () => {
+            const REDATA = JSON.parse(localStorage.getItem('data'))
+            console.log(REDATA);
+        });
+
+        const REDATA = JSON.parse(localStorage.getItem('data')) || []
+
+        const HTM = REDATA.map(el => {
+            return '<li>' + el.name + '</li>'
+        }).join('')
+
+        document.querySelector('.txt').innerHTML = HTM;
+
+
+
+
+
+    </script>
+</body>
+
+</html>
