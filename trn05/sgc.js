@@ -12,12 +12,18 @@ $(function () {
           .siblings()
           .removeClass("on");
       });
-      $(".Gnb li")
+      $(".navBar li")
         .eq(num - 1)
         .addClass("on")
         .siblings()
         .removeClass("on");
       $(".this_page").text(TXT[num - 1]);
+
+      if (num !== 1) {
+        $(".Header").addClass("on");
+      } else {
+        $(".Header").removeClass("on");
+      }
     },
   });
 });
