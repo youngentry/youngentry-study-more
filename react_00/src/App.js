@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./basic.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [num, setNum] = useState(1);
+    const [toggle, setToggle] = useState(true);
+
+    const Test = () => {
+        return <div>hello</div>;
+    };
+
+    return (
+        <>
+            {num}
+            <section className={toggle ? "" : "on"}>
+                {toggle ? "loading" : <Test />}
+            </section>
+            <div>000</div>
+            <button
+                onClick={() => (
+                    setNum(num + 1),
+                    console.log(toggle),
+                    setToggle(!toggle),
+                    console.log(num)
+                )}
+            >
+                click
+            </button>
+        </>
+    );
+};
 
 export default App;
