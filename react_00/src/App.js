@@ -1,33 +1,19 @@
 import { useState } from "react";
-import "./basic.css";
+import Test from "./list";
 
 const App = () => {
     const [num, setNum] = useState(1);
-    const [toggle, setToggle] = useState(true);
-
-    const Test = () => {
-        return <div>hello</div>;
-    };
-
+    const numHandler = () => setNum(num + 1);
     return (
         <>
-            {num}
-            <section className={toggle ? "" : "on"}>
-                {toggle ? "loading" : <Test />}
-            </section>
-            <div>000</div>
-            <button
-                onClick={() => (
-                    setNum(num + 1),
-                    console.log(toggle),
-                    setToggle(!toggle),
-                    console.log(num)
-                )}
-            >
-                click
-            </button>
+            <h1>{num}</h1>
+
+            <button onClick={numHandler}>num plus</button>
+            <Test list="우영우" name="동그라미" age={21} onClick={numHandler} />
+            <Test list="스위스" name="동그라미" age={21} />
+            <Test list="토마토" name="동그라미" age={21} />
+            <Test list="별똥별" name="동그라미" age={21} />
         </>
     );
 };
-
 export default App;
