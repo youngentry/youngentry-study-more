@@ -41,6 +41,7 @@ const SlickCustom = () => {
     };
     return (
         <>
+            <div>asdasdsdasdsasdddddddsdadsadsa</div>
             <Slider ref={s1} {...set} className="MainVisual">
                 {SlideEle.map((itm, idx) => (
                     <figure

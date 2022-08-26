@@ -9,7 +9,9 @@ const App = () => {
     return (
         <>
             {/* <img alt="logo" src="./assets/mainvisual01.jpg" /> */}
-            <MainSlider />
+            {/* <MainSlider /> */}
+            <SlickCustom />
+            <SyncSlick />
         </>
     );
 };
