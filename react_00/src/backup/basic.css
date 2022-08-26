@@ -16,6 +16,7 @@ section {
 }
 
 .on {
+    transition: 1s;
     color: #f00;
 }
 
