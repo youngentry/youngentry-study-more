@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
 
 * {
     margin: 0;
@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     line-height: 1;
 }
 
@@ -20,16 +20,9 @@ body {
     transition: 0.5s;
 }
 
-.TopBanner.on {
-    height: 0;
+.MainVisual {
+    height: 600px;
 }
-
-.btn {
-    font-size: 30px;
-    color: #f00;
-    display: inline-block;
-}
-
-.btn.on {
-    transform: rotate(0.5turn);
+.MainVisual .itm01 {
+    background: url(../public/assets/mainvisual01.jpg);
 }

@@ -2,51 +2,63 @@ import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
-const SyncSlick = () => {
-    const slideElm = [
-        { id: 1, content: "H1" },
-        { id: 2, content: "H2" },
-        { id: 3, content: "H3" },
-        { id: 4, content: "H4" },
+const SlickCustom = () => {
+    const SlideEle = [
+        {
+            id: 1,
+            h2: "jewellery collection event",
+            p: "asjdkfl fajsid flojsdlfajsd lfikaje slifjalei j.",
+        },
+        {
+            id: 2,
+            h2: "jewellery collection event",
+            p: "asjdkfl fajsid flojsdlfajsd lfikaje slifjalei j.",
+        },
+        {
+            id: 3,
+            h2: "jewellery collection event",
+            p: "asjdkfl fajsid flojsdlfajsd lfikaje slifjalei j.",
+        },
+        {
+            id: 4,
+            h2: "jewellery collection event",
+            p: "asjdkfl fajsid flojsdlfajsd lfikaje slifjalei j.",
+        },
     ];
+
     const s1 = useRef();
-    const [slnum, setSlnum] = useState();
+    const [num, setNum] = useState();
 
     useEffect(() => {
-        setSlnum(0);
+        setNum(0);
     }, []);
 
     const set = {
-        // onInit: () => {
-        //     setSlnum(0);
-        // },
-        // onReInit: () => {
-        //     setSlnum(0);
-        // },
-        // beforeChange: (oldIndex, newIndex) => {
-        //     console.log(oldIndex, newIndex);
-        // },
+        arrows: false,
         afterChange: (idx) => {
-            setSlnum(idx);
+            setNum(idx);
         },
     };
-
     return (
         <>
-            {slnum + 1} / {slideElm.length}
-            <Slider ref={s1} {...set}>
-                {slideElm.map((slide, idx) => (
+            <Slider ref={s1} {...set} className="MainVisual">
+                {SlideEle.map((itm, idx) => (
                     <figure
-                        key={slide.id}
-                        className={`itm0${slide.id} ${
-                            idx == slnum ? "on" : ""
-                        }`}
+                        key={itm.id}
+                        className={`itm0${idx + 1} ${idx === num ? "on" : ""}`}
                     >
-                        {slide.content}
+                        {idx + 1}
+                        {itm.h2}
+                        {itm.p}
                     </figure>
                 ))}
             </Slider>
-            <div className="arrows">
+
+            <div className="num">
+                {num + 1} / {SlideEle.length}
+            </div>
+
+            <div className="slideArrow">
                 <i
                     className="xi-arrow-left"
                     onClick={() => s1.current.slickPrev()}
@@ -56,9 +68,14 @@ const SyncSlick = () => {
                     onClick={() => s1.current.slickNext()}
                 ></i>
             </div>
-            <ul>
-                {slideElm.map((dot, idx) => (
-                    <li key={dot.id} onClick={() => s1.current.slickGoTo(idx)}>
+
+            <ul className="slideDot">
+                {SlideEle.map((dot, idx) => (
+                    <li
+                        key={dot.id}
+                        onClick={() => s1.current.slickGoTo(idx)}
+                        className={idx === num ? "on" : ""}
+                    >
                         {dot.id}
                     </li>
                 ))}
@@ -67,4 +84,4 @@ const SyncSlick = () => {
     );
 };
 
-export default SyncSlick;
+export default SlickCustom;
