@@ -41,7 +41,6 @@ const SlickCustom = () => {
     };
     return (
         <>
-            <div>asdasdsdasdsasdddddddsdadsadsa</div>
             <Slider ref={s1} {...set} className="MainVisual">
                 {SlideEle.map((itm, idx) => (
                     <figure
@@ -64,6 +63,7 @@ const SlickCustom = () => {
                     className="xi-arrow-left"
                     onClick={() => s1.current.slickPrev()}
                 ></i>
+                {console.log(s1)}
                 <i
                     className="xi-arrow-right"
                     onClick={() => s1.current.slickNext()}
@@ -71,13 +71,13 @@ const SlickCustom = () => {
             </div>
 
             <ul className="slideDot">
-                {SlideEle.map((dot, idx) => (
+                {SlideEle.map((el, idx) => (
                     <li
-                        key={dot.id}
+                        key={el.id}
                         onClick={() => s1.current.slickGoTo(idx)}
                         className={idx === num ? "on" : ""}
                     >
-                        {dot.id}
+                        {el.id}
                     </li>
                 ))}
             </ul>
