@@ -1,0 +1,237 @@
+/* 슬릭슬라이드 깜박임 해결 : 브라우즈 업그레이드와 관련있는 이슈였음... */
+.slick-slide {
+    transform: translate3d(0, 0, 0);
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+.TopBanner {
+    background: #008850;
+    color: #f9f9f9;
+    overflow: hidden;
+    height: 155px;
+    transition: 0.4s;
+    line-height: 1;
+}
+
+.TopBanner .inner {
+    position: relative;
+    padding: 50px 0;
+}
+
+.TopBanner.on {
+    height: 0;
+}
+
+.TopBanner h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+
+.TopBanner h2 span {
+    font-weight: 400;
+    color: #00e085;
+    margin: 0 0 0 10px;
+}
+
+.TopBanner p {
+    font-size: 15px;
+}
+
+.TopBanner .top_close_btn {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    font-size: 40px;
+}
+
+.Header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* padding: 0 75px; */
+    background: rgba(0, 0, 0, 0.3);
+    color: #f9f9f9;
+    line-height: 100px;
+    transition: 0.5s;
+    border-bottom: 1px solid transparent;
+    z-index: 999;
+}
+
+.Header:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #444444;
+}
+
+.Header.on {
+    background: rgba(255, 255, 255, 1);
+    color: #444444;
+    line-height: 70px;
+    border-bottom: 1px solid #ddd;
+}
+
+.Header h1 {
+    float: left;
+    margin: 0 0 0 70px;
+    font-size: 0;
+}
+
+.Header h1 a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 188px;
+    height: 22px;
+    background: url(../assets/logo_w.png);
+    font-size: 0;
+}
+
+.Header:hover h1 a {
+    background: url(../assets/logo.png);
+}
+
+.Header.on h1 a {
+    background: url(../assets/logo.png);
+}
+
+.Header .Gnb {
+    float: left;
+    margin: 0 0 0 50px;
+}
+
+.Header .top_service {
+    float: right;
+    margin: 0 70px 0 0;
+}
+
+.Header .Gnb>ul>li {
+    float: left;
+}
+
+.Header .Gnb>ul>li>a {
+    position: relative;
+    display: block;
+    padding: 0 35px;
+    font-size: 19px;
+}
+
+.Header .Gnb>ul>li>a::after {
+    content: "";
+    position: absolute;
+    left: 35px;
+    right: 100%;
+    bottom: 0;
+    height: 2px;
+    background: #008850;
+    transition: 0.3s;
+}
+
+.Header .Gnb>ul>li>a:hover::after {
+    right: 35px;
+}
+
+.main_slider figure {
+    position: relative;
+    height: 900px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.main_slider figure .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main_slider .itm01 {
+    background-image: url(../assets/main_visual01.jpg);
+}
+
+.main_slider .itm02 {
+    background-image: url(../assets/main_visual02.jpg);
+}
+
+.main_slider .itm03 {
+    background-image: url(../assets/main_visual03.jpg);
+}
+
+.Section01 {
+    transform: translateY(-155px);
+    height: 745px;
+}
+
+.Section02 {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.Section02 h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.Section02>p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 40px 0;
+}
+
+.Section02 .inner figure {
+    float: left;
+    width: calc(100% / 3);
+}
+
+.Section02 .inner .thumb {
+    overflow: hidden;
+    margin: 0 0 40px 0;
+}
+
+.Section02 .inner figure img {
+    transition: 0.4s;
+}
+
+.Section02 .inner figure:hover img {
+    transform: scale(1.2);
+}
+
+.Section02 .inner .des {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.Section02 .inner .des::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background: #008850;
+}
+
+.Section02 .inner p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.45;
+    margin: 0 0 20px 0;
+}
+
+.Section02 .inner a {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #008850;
+    color: #008850;
+    font-size: 13px;
+}
