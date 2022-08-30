@@ -1,4 +1,4 @@
-/* 슬릭슬라이드 깜박임 해결 : 브라우즈 업그레이드와 관련있는 이슈였음... */
+/* 슬릭슬라이드 깜박임 해결 : 브라우즈 업그레이드와 관련있는 이슈였음... reset으로 옮길 예정 */
 .slick-slide {
     transform: translate3d(0, 0, 0);
 }
@@ -52,7 +52,7 @@
 }
 
 .Header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -126,7 +126,7 @@
     position: absolute;
     left: 35px;
     right: 100%;
-    bottom: 0;
+    bottom: -1px;
     height: 2px;
     background: #008850;
     transition: 0.3s;
@@ -164,8 +164,12 @@
 }
 
 .Section01 {
-    transform: translateY(-155px);
-    height: 745px;
+    padding: 155px 0 0 0;
+    transition: 0.5s;
+}
+
+.Section01.on {
+    padding: 0 0 0 0;
 }
 
 .Section02 {
@@ -234,4 +238,188 @@
     border: 1px solid #008850;
     color: #008850;
     font-size: 13px;
+}
+
+.Section03 {
+    padding: 100px 0;
+    background: url(../assets/section1_bg.jpg) repeat-x;
+}
+
+.Section03 .slider_box {
+    float: right;
+    width: calc((100% - 1200px) / 2 + 1200px);
+    height: 700px;
+}
+
+.Section03 .slider_box>div {
+    float: left;
+}
+
+.Section03 .slider_box .left {
+    width: 450px;
+}
+
+.Section03 .slider_box .left figure {
+    padding: 0 50px 0 0;
+}
+
+.Section03 .slider_box .right {
+    position: relative;
+    width: calc(100% - 450px);
+    height: 100%;
+    overflow: hidden;
+    padding: 30px 0 0 0;
+}
+
+.Section03 .slider_box .right h2 {
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: #f9f9f9;
+}
+
+.Section03 .slider_box .right p {
+    font-size: 17px;
+    font-weight: 300;
+    margin: 0 0 50px 0;
+    color: #f9f9f9;
+}
+
+.Section03 .slider_box .left img {
+    box-shadow: 30px 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.Section03 .slider_box .right figure {
+    padding: 0 30px 0 0;
+}
+
+.Section03 .slider_box .right_slider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% + 100px)
+}
+
+.Section03 .slide_handler {
+    display: inline-block;
+    border: 1px solid #f9f9f9;
+    font-size: 0;
+}
+
+.Section03 .slide_handler i {
+    font-size: 20px;
+    color: #f9f9f9;
+    padding: 10px;
+}
+
+.Section03 .slide_handler i~i {
+    border-left: 1px solid #f9f9f9;
+}
+
+.Section03 strong {
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.Section04 {
+    background: #f9f9f9;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.Section04 h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.Section04>p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 40px 0;
+}
+
+.Section04 .inner {
+    position: relative;
+    width: 100%;
+}
+
+.Section04 .center_slider img {
+    margin: 0 auto;
+}
+
+.Section04 .center_slider figure {
+    filter: brightness(2) grayscale(1);
+}
+
+.Section04 .center_slider figure.on {
+    filter: brightness(1) grayscale(0);
+}
+
+.Section04 .content_box>div {
+    display: none;
+}
+
+.Section04 .content_box>div.on {
+    display: block;
+}
+
+.Section04 .case {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    background: #fff;
+    padding: 50px;
+    margin: 0 0 0 -530px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.Section04 .inner a {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #008850;
+    color: #008850;
+    font-size: 13px;
+    margin: 0 0 30px 0;
+}
+
+.Section04 .content_box strong {
+    font-size: 25px;
+    font-weight: 500;
+    display: block;
+    margin: 0 0 15px 0;
+}
+
+.Section04 .content_box p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.45;
+    min-height: 150px;
+}
+
+.Section04 .case .num {
+    font-size: 40px;
+    color: #008850;
+}
+
+.Section04 .case .num span {
+    font-size: 16px;
+    color: #555;
+}
+
+.Section04 .slide_handler {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Section04 .slide_handler i {
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.25);
 }
