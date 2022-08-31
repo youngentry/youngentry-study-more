@@ -1,6 +1,20 @@
-/* 슬릭슬라이드 깜박임 해결 : 브라우즈 업그레이드와 관련있는 이슈였음... reset으로 옮길 예정 */
-.slick-slide {
-    transform: translate3d(0, 0, 0);
+/* 슬릭슬라이드 깜박임 해결 : 브라우즈 업그레이드와 관련있는 이슈였음
+... reset으로 옮길 예정 
+cloned 가 생성 되는 시간보다 변하는 시간이 길어서 ... 가 원인...
+*/
+
+.slick-track,
+.slick-list {
+    transition-delay: 30ms;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.Wrap {
+    width: 100%;
+    min-width: 1900px;
 }
 
 .inner {
@@ -47,7 +61,7 @@
 .TopBanner .top_close_btn {
     position: absolute;
     top: 30px;
-    right: 15px;
+    right: -2px;
     font-size: 40px;
 }
 
@@ -56,6 +70,7 @@
     top: 0;
     left: 0;
     right: 0;
+    min-width: 1900px;
     /* padding: 0 75px; */
     background: rgba(0, 0, 0, 0.3);
     color: #f9f9f9;
@@ -146,9 +161,11 @@
 
 .main_slider figure .inner {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: 0 0 3px #000;
+    color: #fff;
 }
 
 .main_slider .itm01 {
@@ -163,13 +180,175 @@
     background-image: url(../assets/main_visual03.jpg);
 }
 
+.main_slider figure h2 {
+    font-size: 50px;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on h2 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.main_slider figure span {
+    display: block;
+    margin: 10px 0;
+}
+
+.main_slider figure p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.45;
+    margin: 0 0 50px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+.main_slider figure a {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #f9f9f9;
+    color: #f9f9f9;
+    font-size: 13px;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on a {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+
 .Section01 {
+    position: relative;
     padding: 155px 0 0 0;
     transition: 0.5s;
 }
 
 .Section01.on {
     padding: 0 0 0 0;
+}
+
+.Section01 .slide_handler button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0;
+}
+
+.Section01 .slide_handler button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid #f9f9f9;
+
+}
+
+.Section01 .slide_handler button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60px;
+    height: 0;
+    border-top: 1px solid #f9f9f9;
+}
+
+.Section01 .slide_handler button:first-child::after {
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: left top;
+}
+
+.Section01 .slide_handler button:last-child::after {
+    right: 0;
+    transform: rotate(45deg);
+    transform-origin: right top;
+}
+
+.Section01 .slide_handler button:first-child {
+    margin: 0 0 0 -800px;
+}
+
+.Section01 .slide_handler button:last-child {
+    margin: 0 0 0 800px;
+}
+
+.Section01 .num {
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    margin: 0 0 0 -600px;
+    color: #fff;
+    font-size: 35px;
+}
+
+.Section01 .num span {
+    font-size: 20px;
+    color: #ddd;
+}
+
+.Section01 .slide_dots {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 600px;
+    transform: translate(-100%, -50%);
+    color: #f9f9f9;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.Section01 .slide_dots li {
+    margin: 0 0 10px 0;
+    cursor: pointer;
+}
+
+.Section01 .slide_dots li span {
+    font-size: 0;
+}
+
+.Section01 .slide_dots li.on span {
+    font-size: 18px;
+}
+
+.Section01 .slide_dots li::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0 0 0 15px;
+    vertical-align: -0.2em;
+}
+
+.Section01 .slide_dots li.on::after {
+    background: #fff;
 }
 
 .Section02 {
@@ -310,6 +489,7 @@
     font-size: 20px;
     color: #f9f9f9;
     padding: 10px;
+    cursor: pointer;
 }
 
 .Section03 .slide_handler i~i {
@@ -325,7 +505,7 @@
 
 .Section04 {
     background: #f9f9f9;
-    padding: 100px 0;
+    padding: 100px 0 160px 0;
     text-align: center;
 }
 
@@ -356,6 +536,7 @@
 
 .Section04 .center_slider figure.on {
     filter: brightness(1) grayscale(0);
+    transition: 0.3s;
 }
 
 .Section04 .content_box>div {
@@ -417,9 +598,57 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1300px;
 }
 
 .Section04 .slide_handler i {
     padding: 15px 25px;
     background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.Section04 .slide_handler i:first-child {
+    float: left;
+}
+
+.Section04 .slide_handler i:last-child {
+    float: right;
+}
+
+.Section04 .slick-dots {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Section04 .slick-dots li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #dddddd;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.Section04 .slick-dots li.slick-active {
+    background: #008850;
+}
+
+.Section04 .slick-dots li button {
+    display: none;
+}
+
+
+/* 오늘 하루 팝업 */
+.today_pop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 999;
 }
