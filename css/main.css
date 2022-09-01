@@ -1,0 +1,31 @@
+:root {
+    --mc: #008850;
+    --lc: #f9f9f9;
+}
+
+body {
+    color: #444444;
+    letter-spacing: -0.025em;
+}
+.inner {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+.inner > * {
+    flex: 1;
+}
+.sc {
+    padding: 100px 0;
+    text-align: center;
+}
+.sc h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+.sc .tit {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 40px 0;
+}
