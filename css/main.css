@@ -1,42 +1,80 @@
-/* 슬릭슬라이드 깜박임 해결 : 브라우즈 업그레이드와 관련있는 이슈였음
-... reset으로 옮길 예정 
-cloned 가 생성 되는 시간보다 변하는 시간이 길어서 ... 가 원인...
-*/
+:root {
+    --mc: #008850;
+    --sc: #00e085;
+    --lc: #f9f9f9;
+    --dc: #444444;
+    --gc: #dddddd;
+}
 
-.slick-track,
-.slick-list {
-    transition-delay: 30ms;
+/* all */
+
+.mainColor {
+    color: var(--mc);
+}
+
+/* 슬라이드 깜박임 없애기 */
+.main_slider .swiper-wrapper,
+.main_slider .swiper-slide {
+    transition-duration: 0.5ms;
 }
 
 body {
-    overflow-x: hidden;
-}
-
-.Wrap {
-    width: 100%;
-    min-width: 1900px;
+    color: #444444;
+    letter-spacing: -0.02em;
 }
 
 .inner {
+    display: flex;
     width: 1200px;
     margin: 0 auto;
 }
 
-.mainColor {
-    color: #008850;
+.inner>* {
+    flex: 1;
 }
 
+.w1200 {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.sc {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.sc h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.sc .tit {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 40px 0;
+}
+
+.sc a.btn_s01 {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #008850;
+    color: #008850;
+    font-size: 13px;
+}
+
+
+.Wrap {}
 
 .TopBanner {
-    background: #008850;
-    color: #f9f9f9;
-    overflow: hidden;
+    background: var(--mc);
+    color: var(--lc);
     height: 155px;
-    transition: 0.4s;
-    line-height: 1;
+    overflow: hidden;
+    transition: height 0.5s;
 }
 
-.TopBanner .inner {
+.TopBanner .w1200 {
     position: relative;
     padding: 50px 0;
 }
@@ -51,87 +89,89 @@ body {
     margin: 0 0 10px 0;
 }
 
-
-.TopBanner h2 span {
+.TopBanner span {
+    color: var(--sc);
     font-weight: 400;
-    color: #00e085;
-    margin: 0 0 0 10px;
 }
 
 .TopBanner p {
     font-size: 15px;
+    font-weight: 300;
 }
 
 .TopBanner .top_close_btn {
     position: absolute;
-    top: 30px;
-    right: -2px;
-    font-size: 40px;
+    top: 50px;
+    right: 0;
+    font-size: 30px;
 }
 
 .Header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    min-width: 1900px;
-    /* padding: 0 75px; */
-    background: rgba(0, 0, 0, 0.3);
-    color: #f9f9f9;
+    width: 100%;
+    z-index: 9999;
+}
+
+.Header .hd_wrap {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--lc);
     line-height: 100px;
     transition: 0.5s;
-    border-bottom: 1px solid transparent;
-    z-index: 999;
 }
 
-.Header:hover {
-    background: rgba(255, 255, 255, 1);
-    color: #444444;
+.Header.on .hd_wrap {
+    background: var(--lc);
+    color: var(--dc);
+    line-height: 80px;
 }
 
-.Header.on {
-    background: rgba(255, 255, 255, 1);
-    color: #444444;
-    line-height: 70px;
-    border-bottom: 1px solid #ddd;
+
+.Header .hd_wrap:hover {
+    background: var(--lc);
+    color: var(--dc);
 }
 
 .Header h1 {
-    float: left;
-    margin: 0 0 0 70px;
+    position: absolute;
+    top: 0;
+    left: 70px;
     font-size: 0;
 }
 
-.Header h1 a {
+.Header .hd_wrap h1 a {
     display: inline-block;
-    vertical-align: middle;
+    font-size: 0;
     width: 188px;
     height: 22px;
     background: url(../assets/logo_w.png);
-    font-size: 0;
+    vertical-align: middle;
 }
 
-.Header:hover h1 a {
+.Header .hd_wrap:hover h1 a {
     background: url(../assets/logo.png);
 }
 
-.Header.on h1 a {
+.Header.on .hd_wrap h1 a {
     background: url(../assets/logo.png);
-}
-
-.Header .Gnb {
-    float: left;
-    margin: 0 0 0 50px;
 }
 
 .Header .top_service {
-    float: right;
-    margin: 0 70px 0 0;
+    position: absolute;
+    top: 0;
+    right: 70px;
 }
 
-.Header .top_service .project {
-    float: left;
-    margin: 0 20px 0 0;
+.Gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+.Header .top_service {
+    display: flex;
+    gap: 40px;
 }
 
 .Header .top_service .project li {
@@ -145,7 +185,7 @@ body {
     display: inline-block;
     width: 1px;
     height: 10px;
-    background: #ddd;
+    background: var(--gc);
     margin: 0 10px;
 }
 
@@ -183,8 +223,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     line-height: 1.45;
-    border: 2px solid #008850;
-    background: #fff;
+    border: 2px solid var(--mc);
+    background: var(--lc);
     color: #444444;
     padding: 20px 35px;
 }
@@ -195,7 +235,6 @@ body {
 
 .Header .top_service .top_search {
     position: relative;
-    float: left;
 }
 
 .Header .top_search .search_box {
@@ -204,8 +243,8 @@ body {
     top: 80px;
     right: -65px;
     line-height: 1;
-    border: 1px solid #ddd;
-    background: #fff;
+    border: 1px solid var(--gc);
+    background: var(--lc);
     padding: 30px 50px;
     width: 600px;
     text-align: center;
@@ -220,7 +259,7 @@ body {
     width: 450px;
     border: none;
     outline: none;
-    border-bottom: 2px solid #444;
+    border-bottom: 2px solid var(--dc);
 }
 
 .Header .top_search .search_box button {
@@ -237,41 +276,10 @@ body {
     right: 60px;
     width: 20px;
     height: 20px;
-    background: #fff;
-    border-left: 1px solid #ddd;
-    border-top: 1px solid #ddd;
+    background: var(--lc);
+    border-left: 1px solid var(--gc);
+    border-top: 1px solid var(--gc);
     transform: rotate(45deg);
-}
-
-
-
-
-
-
-.Header .Gnb>ul>li {
-    float: left;
-}
-
-.Header .Gnb>ul>li>a {
-    position: relative;
-    display: block;
-    padding: 0 35px;
-    font-size: 19px;
-}
-
-.Header .Gnb>ul>li>a::after {
-    content: "";
-    position: absolute;
-    left: 35px;
-    right: 100%;
-    bottom: -1px;
-    height: 2px;
-    background: #008850;
-    transition: 0.3s;
-}
-
-.Header .Gnb>ul>li>a:hover::after {
-    right: 35px;
 }
 
 .main_slider figure {
@@ -282,13 +290,13 @@ body {
     background-size: cover;
 }
 
-.main_slider figure .inner {
+.main_slider figure .w1200 {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: 0 0 3px #000;
-    color: #fff;
+    text-shadow: 0 0 3px var(--dc);
+    color: var(--lc);
 }
 
 .main_slider .itm01 {
@@ -340,8 +348,8 @@ body {
 .main_slider figure a {
     display: inline-block;
     padding: 10px 25px;
-    border: 1px solid #f9f9f9;
-    color: #f9f9f9;
+    border: 1px solid var(--lc);
+    color: var(--lc);
     font-size: 13px;
     transform: translateY(100px);
     opacity: 0;
@@ -353,18 +361,33 @@ body {
     transition: 0.5s 1s;
 }
 
-
-.Section01 {
+.MainVisual {
     position: relative;
     padding: 155px 0 0 0;
     transition: 0.5s;
 }
 
-.Section01.on {
+.MainVisual.on {
     padding: 0 0 0 0;
 }
 
-.Section01 .slide_handler button {
+.MainVisual .main_slider_num {
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    margin: 0 0 0 -600px;
+    color: var(--lc);
+    font-size: 35px;
+    z-index: 999;
+}
+
+.MainVisual .main_slider_num span {
+    font-size: 18px;
+    color: var(--gc);
+}
+
+
+.MainVisual .slide_handler button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -379,9 +402,10 @@ body {
     border: none;
     outline: none;
     font-size: 0;
+    z-index: 999;
 }
 
-.Section01 .slide_handler button::after {
+.MainVisual .slide_handler button::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -391,7 +415,7 @@ body {
 
 }
 
-.Section01 .slide_handler button::before {
+.MainVisual .slide_handler button::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -401,27 +425,27 @@ body {
     border-top: 1px solid #f9f9f9;
 }
 
-.Section01 .slide_handler button:first-child::after {
+.MainVisual .slide_handler button:first-child::after {
     left: 0;
     transform: rotate(-45deg);
     transform-origin: left top;
 }
 
-.Section01 .slide_handler button:last-child::after {
+.MainVisual .slide_handler button:last-child::after {
     right: 0;
     transform: rotate(45deg);
     transform-origin: right top;
 }
 
-.Section01 .slide_handler button:first-child {
+.MainVisual .slide_handler button:first-child {
     margin: 0 0 0 -800px;
 }
 
-.Section01 .slide_handler button:last-child {
+.MainVisual .slide_handler button:last-child {
     margin: 0 0 0 800px;
 }
 
-.Section01 .num {
+.MainVisual .num {
     position: absolute;
     bottom: 250px;
     left: 50%;
@@ -430,12 +454,12 @@ body {
     font-size: 35px;
 }
 
-.Section01 .num span {
+.MainVisual .num span {
     font-size: 20px;
     color: #ddd;
 }
 
-.Section01 .slide_dots {
+.MainVisual .slide_dots {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -445,22 +469,23 @@ body {
     font-size: 18px;
     font-weight: 300;
     text-align: right;
+    z-index: 999;
 }
 
-.Section01 .slide_dots li {
+.MainVisual .slide_dots li {
     margin: 0 0 10px 0;
     cursor: pointer;
 }
 
-.Section01 .slide_dots li span {
+.MainVisual .slide_dots li span {
     font-size: 0;
 }
 
-.Section01 .slide_dots li.on span {
+.MainVisual .slide_dots li.on span {
     font-size: 18px;
 }
 
-.Section01 .slide_dots li::after {
+.MainVisual .slide_dots li::after {
     content: "";
     display: inline-block;
     width: 20px;
@@ -470,53 +495,27 @@ body {
     vertical-align: -0.2em;
 }
 
-.Section01 .slide_dots li.on::after {
-    background: #fff;
-}
-
-.Section02 {
-    padding: 100px 0;
-    text-align: center;
-}
-
-.Section02 h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 0 0 15px 0;
-}
-
-.Section02>p {
-    font-size: 15px;
-    font-weight: 300;
-    margin: 0 0 40px 0;
-}
-
-.Section02 .inner figure {
-    float: left;
-    width: calc(100% / 3);
-}
-
-.Section02 .inner .thumb {
+.MainContent .inner .thumb {
     overflow: hidden;
     margin: 0 0 40px 0;
 }
 
-.Section02 .inner figure img {
+.MainContent .inner figure img {
     transition: 0.4s;
 }
 
-.Section02 .inner figure:hover img {
+.MainContent .inner figure:hover img {
     transform: scale(1.2);
 }
 
-.Section02 .inner .des {
+.MainContent .inner .des {
     position: relative;
     font-size: 18px;
     font-weight: 500;
     margin: 0 0 20px 0;
 }
 
-.Section02 .inner .des::before {
+.MainContent .inner .des::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -527,150 +526,111 @@ body {
     background: #008850;
 }
 
-.Section02 .inner p {
+.MainContent .inner p {
     font-size: 15px;
     font-weight: 300;
     line-height: 1.45;
     margin: 0 0 20px 0;
 }
 
-.Section02 .inner a {
-    display: inline-block;
-    padding: 10px 25px;
-    border: 1px solid #008850;
-    color: #008850;
-    font-size: 13px;
-}
-
-.Section03 {
-    padding: 100px 0;
+.Portfolio {
+    text-align: left;
     background: url(../assets/section1_bg.jpg) repeat-x;
 }
 
-.Section03 .slider_box {
-    float: right;
+.Portfolio .wrap_port {
+    display: flex;
+
     width: calc((100% - 1200px) / 2 + 1200px);
-    height: 700px;
+    margin: 0 0 0 auto;
+    overflow: hidden;
 }
 
-.Section03 .slider_box>div {
-    float: left;
-}
-
-.Section03 .slider_box .left {
+.Portfolio .wrap_port .left {
     width: 450px;
 }
 
-.Section03 .slider_box .left figure {
-    padding: 0 50px 0 0;
-}
-
-.Section03 .slider_box .right {
-    position: relative;
+.Portfolio .wrap_port .right {
+    display: flex;
+    flex-direction: column;
     width: calc(100% - 450px);
-    height: 100%;
+    padding: 50px 0 0 0;
     overflow: hidden;
-    padding: 30px 0 0 0;
 }
 
-.Section03 .slider_box .right h2 {
-    font-size: 35px;
-    font-weight: 700;
-    margin: 0 0 15px 0;
-    color: #f9f9f9;
+.portfolio_right_slide {
+    width: calc(100% + 50px);
+    margin: auto 0 0 0;
 }
 
-.Section03 .slider_box .right p {
-    font-size: 17px;
-    font-weight: 300;
-    margin: 0 0 50px 0;
-    color: #f9f9f9;
+.Portfolio .wrap_port .right .title {
+    color: var(--lc);
 }
 
-.Section03 .slider_box .left img {
-    box-shadow: 30px 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.Section03 .slider_box .right figure {
-    padding: 0 30px 0 0;
-}
-
-.Section03 .slider_box .right_slider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: calc(100% + 100px)
-}
-
-.Section03 .slide_handler {
+.Portfolio .slide_handler {
     display: inline-block;
     border: 1px solid #f9f9f9;
     font-size: 0;
 }
 
-.Section03 .slide_handler i {
+.Portfolio .slide_handler i {
     font-size: 20px;
     color: #f9f9f9;
     padding: 10px;
     cursor: pointer;
 }
 
-.Section03 .slide_handler i~i {
+.Portfolio .slide_handler i~i {
     border-left: 1px solid #f9f9f9;
 }
 
-.Section03 strong {
-    line-height: 60px;
-    font-size: 18px;
-    font-weight: 500;
+.Portfolio .wrap_port strong {
+    display: block;
+    /* background: var(--lc); */
+    line-height: 50px;
 }
 
-
-.Section04 {
-    background: #f9f9f9;
-    padding: 100px 0 160px 0;
-    text-align: center;
+.Portfolio .portfolio_left_slide {
+    /* overflow: visible; */
 }
 
-.Section04 h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 0 0 15px 0;
+.Portfolio .portfolio_left_slide img {
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
 }
 
-.Section04>p {
-    font-size: 15px;
-    font-weight: 300;
-    margin: 0 0 40px 0;
+.Solution {
+    background: var(--lc);
 }
 
-.Section04 .inner {
+.Solution .container {
     position: relative;
-    width: 100%;
 }
 
-.Section04 .center_slider img {
+.Solution .center_slider img {
+
     margin: 0 auto;
 }
 
-.Section04 .center_slider figure {
+.Solution .center_slider figure {
+    width: 1200px !important;
     filter: brightness(2) grayscale(1);
 }
 
-.Section04 .center_slider figure.on {
+.Solution .center_slider figure.on {
     filter: brightness(1) grayscale(0);
-    transition: 0.3s;
+    /* 그래도 연구해봄... */
+    transition: 1s;
 }
 
-.Section04 .content_box>div {
+.Solution .content_box>div {
     display: none;
 }
 
-.Section04 .content_box>div.on {
+.Solution .content_box>div.on {
     display: block;
 }
 
-.Section04 .case {
+.Solution .case {
     position: absolute;
     left: 50%;
     top: 100px;
@@ -680,9 +640,10 @@ body {
     width: 300px;
     text-align: left;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
 
-.Section04 .case::after {
+.Solution .case::after {
     content: "";
     position: absolute;
     top: 60px;
@@ -694,49 +655,49 @@ body {
 }
 
 
-.Section04 .inner a {
-    display: inline-block;
-    padding: 10px 25px;
-    border: 1px solid #008850;
-    color: #008850;
-    font-size: 13px;
-    margin: 0 0 30px 0;
+
+
+.Solution .content_box {
+    margin: 0 0 10px 0;
 }
 
-.Section04 .content_box strong {
-    font-size: 25px;
-    font-weight: 500;
+.Solution .content_box strong {
     display: block;
     margin: 0 0 15px 0;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.45;
+
 }
 
-.Section04 .content_box p {
+.Solution .content_box p {
     font-size: 17px;
     font-weight: 300;
     line-height: 1.45;
     min-height: 150px;
 }
 
-.Section04 .case .num {
+.Solution .case .solution_slider_num {
     font-size: 40px;
     color: #008850;
 }
 
-.Section04 .case .num span {
+.Solution .case .solution_slider_num span {
     font-size: 16px;
     color: #555;
 }
 
-.Section04 .slide_handler {
+.Solution .slide_handler {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 1300px;
+    z-index: 999;
 }
 
-.Section04 .slide_handler i {
+.Solution .slide_handler i {
     padding: 15px 25px;
     background: rgba(0, 0, 0, 0.25);
     color: #fff;
@@ -744,106 +705,108 @@ body {
     cursor: pointer;
 }
 
-.Section04 .slide_handler i:first-child {
+.Solution .slide_handler i:first-child {
     float: left;
 }
 
-.Section04 .slide_handler i:last-child {
+.Solution .slide_handler i:last-child {
     float: right;
 }
 
-.Section04 .slick-dots {
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
+.Solution .solution_dots {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0;
+    margin: 20px 0 0 0;
 }
 
-.Section04 .slick-dots li {
-    display: inline-block;
+.Solution .solution_dots>li {
     width: 20px;
     height: 20px;
-    background: #dddddd;
-    margin: 0 10px;
-    cursor: pointer;
+    background: var(--gc);
 }
 
-.Section04 .slick-dots li.slick-active {
-    background: #008850;
+.Solution .solution_dots>li.on {
+    background: var(--mc);
 }
 
-.Section04 .slick-dots li button {
-    display: none;
-}
 
-.Section05 {
+
+
+
+
+
+.Promotion {
     padding: 100px 0;
     background: url(../assets/section4_bg.jpg) no-repeat left bottom;
     text-align: center;
 }
 
-.Section05 h2 {
+.Promotion h2 {
     font-size: 30px;
     font-weight: 700;
     margin: 0 0 15px 0;
 }
 
-.Section05>p {
+.Promotion>p {
     font-size: 15px;
     font-weight: 300;
     margin: 0 0 40px 0;
 }
 
-.Section05 .inner {
+.Promotion .container {
     position: relative;
-    width: 800px;
-}
-
-.Section05 .movie_case {
-    width: 800px;
-    height: 450px;
-    margin: 0 auto 80px auto;
-}
-
-.Section05 .txt {
     width: 800px;
     margin: 0 auto;
 }
 
-.Section05 .txt li {
-    float: left;
-    width: 50%;
+.Promotion .movie_case {
+    width: 800px;
+    height: 450px;
+    margin: 0 auto 80px auto;
+    overflow: hidden;
 }
 
-.Section05 .txt strong {
+
+.Promotion .txt {
+    display: flex;
+    width: 800px;
+}
+
+.Promotion .txt li {
+    flex: 1;
+}
+
+.Promotion .txt strong {
     display: block;
     font-size: 22px;
     color: #00e085;
     margin: 0 0 15px 0;
 }
 
-.Section05 .txt span {
+.Promotion .txt span {
     display: block;
     font-size: 15px;
     color: #f9f9f9;
 }
 
-.Section05 .movie_handler {
+.Promotion .movie_handler {
     position: absolute;
     top: 225px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.Section05 .movie_handler button {
+.Promotion .movie_handler button {
     border: none;
     outline: none;
     background: transparent;
     font-size: 0;
 }
 
-.Section05 .movie_handler button::after {
-    content: "\ea3b";
+.Promotion .movie_handler button::after {
+    content: "\ea3e";
     font-size: 50px;
     font-family: xeicon;
     color: #fff;
@@ -852,67 +815,49 @@ body {
     border-radius: 50%;
 }
 
-.Section05 .movie_handler button.on::after {
-    content: "\ea3e";
+.Promotion .movie_handler button.on::after {
+    content: "\ea3b";
 }
 
-.Section06 {
-    padding: 100px 0;
-    text-align: center;
+.news .inner {
+    gap: 30px;
 }
 
-.Section06 h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 0 0 15px 0;
-}
 
-.Section06>p {
-    font-size: 15px;
-    font-weight: 300;
-    margin: 0 0 40px 0;
-}
-
-.Section06 .inner {
-    width: 1230px;
-}
-
-.Section06 .inner figure {
-    float: left;
-    width: 33.333333%;
-    padding: 0 15px;
+.news figure {
     text-align: left;
 }
 
-.Section06 .inner figure img {
+.news figure img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     margin: 0 0 20px 0;
 }
 
-.Section06 .inner figure .sort {
+.news figure .sort {
     display: block;
     margin: 0 0 15px 0;
     font-size: 14px;
     color: #008850;
 }
 
-.Section06 .inner figure .title {
+.news figure .title {
     margin: 0 0 20px 0;
     font-size: 19px;
     font-weight: 500;
     line-height: 1.45;
 }
 
-.Section06 .inner figure:hover .title {
+.news figure:hover .title {
     text-decoration: underline;
 }
 
-.Section06 .inner figure .date {
+.news figure .date {
     font-size: 13px;
     font-weight: 300;
 }
+
 
 .Footer {
     position: relative;
@@ -925,11 +870,12 @@ body {
 }
 
 .Footer ul>li {
-    float: left;
+    display: inline-block;
 }
 
-.Footer .ft_top .left {
-    float: left;
+.Footer .ft_top .right {
+    margin: 0 0 0 auto;
+    text-align: right;
 }
 
 .Footer .ft_top .left li~li::before {
@@ -944,14 +890,6 @@ body {
 
 .Footer .ft_top .left span {
     font-size: 20px;
-}
-
-.Footer .ft_top .right {
-    float: right;
-}
-
-.Footer .ft_top .right li {
-    /* padding: 0 50px 0 0; */
 }
 
 .Footer .ft_top .right li a {
@@ -989,9 +927,13 @@ body {
     padding: 30px 0;
 }
 
+.Footer .ft_bottom .inner>* {
+    flex: none;
+}
+
 .Footer .ft_bottom .family_link {
-    float: right;
     padding: 5px 0 0 0;
+    order: 2;
 }
 
 .Footer .ft_bottom .family_link select {
@@ -1003,7 +945,6 @@ body {
 }
 
 .Footer .ft_bottom .left {
-    float: left;
     font-size: 15px;
 }
 
@@ -1012,7 +953,7 @@ body {
 }
 
 .Footer .ft_bottom .right {
-    float: right;
+    margin: 0 0 0 auto;
 }
 
 .Footer .ft_bottom .right i {
@@ -1049,20 +990,26 @@ body {
     display: block;
 }
 
+
 .to_top {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
     bottom: 100px;
     right: 100px;
+    font-size: 30px;
+    background: var(--mc);
+    color: var(--lc);
+    padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
+    z-index: 9999;
+    transition: 1s;
 }
 
-.to_top i {
-    font-size: 40px;
-    padding: 15px;
-    color: #fff;
-    background: #008850;
-    border-radius: 50%;
+.to_top.on {
+    visibility: visible;
+    opacity: 1;
 }
 
 .popup {

@@ -5,17 +5,8 @@
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
     <div id="stop">stop</div>
-
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        // 2. This code loads the IFrame Player API code asynchronously.
-        var tag = document.createElement('script');
-
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
         var player;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
@@ -30,10 +21,10 @@
                     // playsinline: 1,
                     mute: 1,
                 },
-                videoId: 'M7lc1UVf-VE',
+                videoId: 'raw3Nu0_mBQ',
                 events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
+                    //'onReady': onPlayerReady,
+                    //'onStateChange': onPlayerStateChange
                 }
             });
         }
@@ -57,7 +48,7 @@
             player.stopVideo();
         }
 
-        stop.addEventListener('click', stopVideo)
+        document.getElementById('stop').addEventListener('click', stopVideo)
     </script>
 </body>
 
