@@ -1,23 +1,29 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slick-track,
+.slick-slide {
+  transition-duration: 0.5ms;
 }
 
 body {
-    color: inherit;
-    line-height: 1;
+  color: inherit;
+  line-height: 1;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 figure.on {
-    color: red;
-    transition: 0.5s;
+  color: #369;
+  transition: 0.7s;
 }
