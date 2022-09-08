@@ -16,3 +16,8 @@ ul {
 a {
     text-decoration: none;
 }
+
+figure.on {
+    color: red;
+    transition: 0.5s;
+}
