@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react'
 
 const Sub01 = () => {
-    return <div>Sub01</div>;
-};
+    return (
+        <div>Sub01</div>
+    )
+}
 
-export default Sub01;
+export default Sub01

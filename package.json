@@ -1,17 +1,19 @@
 {
-    "name": "react_router",
+    "name": "hd_spa",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://youngentry.github.io/react-router-practice/",
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
-        "node-sass": "^7.0.3",
+        "axios": "^0.27.2",
+        "gh-pages": "^4.0.0",
         "react": "^18.2.0",
-        "homepage": "https://youngentry.github.io/react-router-practice",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.4.0",
         "react-scripts": "5.0.1",
+        "swiper": "^8.4.2",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
@@ -41,7 +43,6 @@
         ]
     },
     "devDependencies": {
-        "gh-pages": "^4.0.0",
         "sass": "^1.54.9"
     }
 }
