@@ -1,4 +1,8 @@
 import React, { useRef, useState } from "react";
+import ListDiary from "./ListDiary";
+
+import "./css/reset.css";
+import "./css/basic.scss";
 
 const App = () => {
     const listNum = useRef(1);
@@ -42,22 +46,10 @@ const App = () => {
 
     return (
         <div>
-            {list.map((el, idx) => {
-                return (
-                    <div key={idx}>
-                        <ul>
-                            <li>작성 번호 : {el.id}</li>
-                            <li>제목 : {el.title}</li>
-                            <li>내용 : {el.content}</li>
-                        </ul>
-                        <button onClick={() => removeHandler(el.id)}>삭제하기</button>
-                    </div>
-                );
-            })}
-
             <input type="text" name="title" onChange={writeHandler} value={write.title} ref={titleRef} />
             <input type="text" name="content" onChange={writeHandler} value={write.content} ref={contentRef} />
             <button onClick={listHandler}>작성하기</button>
+            <ListDiary removeHandler={removeHandler} diaryList={list} />
         </div>
     );
 };
