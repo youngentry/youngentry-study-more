@@ -1,12 +1,10 @@
 .ListDiary {
-    h2 {
-        font-size: 30px;
-        padding-bottom: 30px;
-    }
+    .container {
+        width: 800px;
 
-    .box {
-        display: flex;
-        padding: 60px;
-        background: #fff;
+        h2 {
+            font-size: 30px;
+            padding-bottom: 30px;
+        }
     }
 }
