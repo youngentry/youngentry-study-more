@@ -1,41 +1,7 @@
-.ItemDiary {
+.ul {
     width: 100%;
 
-    .box {
-        ul {
-            margin: 10px 0;
-            padding: 30px;
-            text-align: start;
-            border: 1px solid #333;
-            border-radius: 5px;
-
-            .titleArea {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
-            }
-            .content {
-                border-top: 1px solid #333;
-                padding: 10px 0;
-            }
-        }
-        .buttonArea {
-            display: flex;
-            gap: 10px;
-
-            button {
-                cursor: pointer;
-                width: 100%;
-                padding: 10px 0;
-                background: rgb(226, 216, 177);
-                border: none;
-                transition: 0.2s;
-                border-radius: 5px;
-
-                &:hover {
-                    background: rgb(225, 207, 135);
-                }
-            }
-        }
+    li {
+        padding: 100px;
     }
 }
