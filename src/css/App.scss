@@ -1,0 +1,15 @@
+html {
+    font-size: 20px;
+}
+
+.mainVisual {
+    height: 30vh;
+    background: url(../../public/img/main01.jpg) no-repeat center center/cover;
+    margin-bottom: 1rem;
+}
+
+.mainProduct {
+    img {
+        width: 100%;
+    }
+}
