@@ -9,7 +9,8 @@ const NavBar = () => {
             <Container>
                 <Navbar.Brand href="#home">Y MALL</Navbar.Brand>
                 <Nav className="me-auto">
-                    {/* navigate(1) : 앞으로 n 페이지 이동
+                    {/* 221219 17:00 페이지 앞뒤로 이동하려면
+                        navigate(1) : 앞으로 n 페이지 이동
                         navigate(-1): 뒤로 n 페이지 이동 */}
                     <Nav.Link
                         onClick={() => {
@@ -18,6 +19,7 @@ const NavBar = () => {
                     >
                         MainVisual
                     </Nav.Link>
+
                     <Nav.Link
                         onClick={() => {
                             navigate("/mainProduct");
@@ -25,12 +27,29 @@ const NavBar = () => {
                     >
                         MainProduct
                     </Nav.Link>
+
                     <Nav.Link
                         onClick={() => {
                             navigate("/detail");
                         }}
                     >
                         Detail
+                    </Nav.Link>
+
+                    <Nav.Link
+                        onClick={() => {
+                            navigate("/event");
+                        }}
+                    >
+                        Event
+                    </Nav.Link>
+
+                    <Nav.Link
+                        onClick={() => {
+                            navigate("/about");
+                        }}
+                    >
+                        About
                     </Nav.Link>
                 </Nav>
             </Container>
