@@ -30,7 +30,7 @@ const NavBar = () => {
 
                     <Nav.Link
                         onClick={() => {
-                            navigate("/detail");
+                            navigate("/detail/0");
                         }}
                     >
                         Detail
