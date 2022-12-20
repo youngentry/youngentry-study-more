@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { Nav } from "react-bootstrap/";
+import "../css/Detail.scss";
 
 // 221220 02:00 컴포넌트의 lifecycle
 // 1. 페이지에 나타남 (mount)
@@ -47,6 +49,18 @@ const BiggerBlueButton = styled(BlueButton)`
 const Detail = ({ shoes }) => {
     const [isNoticeVisible, setIsNoticeVisible] = useState(true);
     const [size, setSize] = useState("");
+    const [tabVisible, setTabVisible] = useState(0);
+
+    const [fadeIn, setFadeIn] = useState("");
+    // 221220 22:30 useEffect는 여러개 사용 가능하다.
+    // fadeIn을 페이지 전체에 넣기 위해 useEffect를 검색해보니
+    // useEffect는 한 컴포넌트 안에 여러개를 사용하여도 각각 동작하도록 되어 있다.
+    useEffect(() => {
+        setFadeIn("fadeIn");
+        return () => {
+            setFadeIn("");
+        };
+    }, []);
 
     // 221220 02:10 지금 lifecycle hook을 사용하는 방법
     // useEffect 안의 코드는 html 렌더링 후에 동작한다.
@@ -58,9 +72,9 @@ const Detail = ({ shoes }) => {
     // mount될 때, update될 때 실행되는 코드
     useEffect(() => {
         // 201220 03:15 setTimeout은 보통 변수에 저장하여 실행시킨다.
-        // const changeIntoFalse = setTimeout(() => {
-        //     setIsNoticeVisible(false);
-        // }, 2000);
+        const changeIntoFalse = setTimeout(() => {
+            setIsNoticeVisible(false);
+        }, 2000);
 
         // 221220 03:30 숫자만 입력받기(별도로 메모할 필요는 없음)
         isValidNumber(size);
@@ -69,7 +83,7 @@ const Detail = ({ shoes }) => {
         // mount(만들어질 때)시에는 실행되지 않고, update(useEffect 실행 전)와 unmount(삭제될 때)시에 실행된다.
         // 1. clearTimeout으로 기존 코드를 정리할 때 사용
         return () => {
-            // clearTimeout(changeIntoFalse);
+            clearTimeout(changeIntoFalse);
             // 2. 데이터 요청을 할 때 에러가 발생하지 않도록 기존 데이터 요청을 제거하면 좋다.
         };
 
@@ -90,11 +104,10 @@ const Detail = ({ shoes }) => {
             alert("숫자를 입력해주세요.");
         }
     };
-
     return (
         <>
             {foundShoesData ? (
-                <div className="container">
+                <div className={`container opacityZero ${fadeIn}`}>
                     {isNoticeVisible ? (
                         <div className="noticeEvent" style={{ background: "#399", padding: "10px" }}>
                             2초 이내에 누르면 할인
@@ -119,6 +132,39 @@ const Detail = ({ shoes }) => {
                             <button className="btn btn-danger">주문하기</button>
                         </div>
                     </div>
+                    <Nav variant="tabs" defaultActiveKey="link0">
+                        <Nav.Item>
+                            <Nav.Link
+                                onClick={() => {
+                                    setTabVisible(0);
+                                }}
+                                eventKey="link0"
+                            >
+                                버튼0
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link
+                                onClick={() => {
+                                    setTabVisible(1);
+                                }}
+                                eventKey="link1"
+                            >
+                                버튼1
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link
+                                onClick={() => {
+                                    setTabVisible(2);
+                                }}
+                                eventKey="link2"
+                            >
+                                버튼2
+                            </Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                    <Tab tabVisible={tabVisible} />
                 </div>
             ) : (
                 <div>
@@ -128,6 +174,29 @@ const Detail = ({ shoes }) => {
             )}
         </>
     );
+};
+
+const Tab = ({ tabVisible }) => {
+    // 221220 22:10 css className으로 트랜지션 주기
+    // opacityZero클래스에 opacity: 0
+    // fadeIn클래스에 opacity: 1, transition: 0.5s
+    // useEffect로 특정 state가 변할 때 setTimeout으로 붙였다 떼주면 된다.
+    // setTimeout을 써야하는 이유는 리액트 automatic batching 기능 때문
+    // 여러 state가 업데이트 될 때마다 수 차례 렌더링을 하게 되는데
+    // state의 변화가 다 끝나고 최종적으로 유지되어야 할 상태에서 렌더링을 수행하도록 하여 성능을 높인다.
+
+    const [fadeIn, setFadeIn] = useState("fadeIn");
+
+    useEffect(() => {
+        setTimeout(() => {
+            setFadeIn("fadeIn");
+        }, 10);
+        return () => {
+            setFadeIn("");
+        };
+    }, [tabVisible]);
+
+    return <div className={`opacityZero ${fadeIn}`}>{[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tabVisible]}</div>;
 };
 
 export default Detail;

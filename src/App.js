@@ -10,7 +10,7 @@ import About from "./components/About";
 import Event from "./components/Event";
 
 function App() {
-    const [shoes] = useState(PRODUCT_DATA);
+    const [shoes, setShoes] = useState(PRODUCT_DATA);
 
     return (
         <div className="App">
@@ -18,7 +18,7 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<MainVisual />} />
-                <Route path="/mainProduct" element={<MainProduct shoes={shoes} />} />
+                <Route path="/mainProduct" element={<MainProduct shoes={shoes} setShoes={setShoes} />} />
                 {/* 221219: 18:00 Nested Routes: 여러 페이지, 여러 유사한 페이지 필요할 때
                     Route를 여는 태그, 닫는 태그로 만들고,
                     그 안에 Route를 넣게 되면 /detail/location detail도 보여주고 location도 보여줄 수 있다.
