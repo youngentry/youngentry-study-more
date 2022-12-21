@@ -51,6 +51,13 @@ const NavBar = () => {
                     >
                         About
                     </Nav.Link>
+                    <Nav.Link
+                        onClick={() => {
+                            navigate("/Cart");
+                        }}
+                    >
+                        Cart
+                    </Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

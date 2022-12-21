@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Nav } from "react-bootstrap/";
 import "../css/Detail.scss";
+import { addProduct } from "./reducer/productSlice";
+import { useDispatch } from "react-redux";
 
 // 221220 02:00 컴포넌트의 lifecycle
 // 1. 페이지에 나타남 (mount)
@@ -104,6 +106,8 @@ const Detail = ({ shoes }) => {
             alert("숫자를 입력해주세요.");
         }
     };
+
+    const dispatch = useDispatch();
     return (
         <>
             {foundShoesData ? (
@@ -129,7 +133,21 @@ const Detail = ({ shoes }) => {
                             <h4 className="pt-5">{foundShoesData.title}</h4>
                             <p>{foundShoesData.content}</p>
                             <p>{foundShoesData.price}</p>
-                            <button className="btn btn-danger">주문하기</button>
+                            <button
+                                className="btn btn-danger"
+                                onClick={() => {
+                                    dispatch(
+                                        // 221221 21:50 데이터 형태가 다르면 직접 맞춰 주면 된다.
+                                        addProduct({
+                                            id: foundShoesData.id,
+                                            name: foundShoesData.title,
+                                            count: 1,
+                                        })
+                                    );
+                                }}
+                            >
+                                주문하기
+                            </button>
                         </div>
                     </div>
                     <Nav variant="tabs" defaultActiveKey="link0">
