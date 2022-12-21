@@ -62,7 +62,7 @@ const Detail = ({ shoes }) => {
         };
     }, []);
 
-    // 221220 02:10 지금 lifecycle hook을 사용하는 방법
+    // 221220 02:10 useEffect 사용하는 방법
     // useEffect 안의 코드는 html 렌더링 후에 동작한다.
     // 그래서 언제 쓰면 좋은가? => 오래걸리는 것
     // 1. 이용자가 보이는 화면을 다 그린 뒤, 오래 걸리는 연산을 수행하도록 할 때
@@ -184,7 +184,6 @@ const Tab = ({ tabVisible }) => {
     // setTimeout을 써야하는 이유는 리액트 automatic batching 기능 때문
     // 여러 state가 업데이트 될 때마다 수 차례 렌더링을 하게 되는데
     // state의 변화가 다 끝나고 최종적으로 유지되어야 할 상태에서 렌더링을 수행하도록 하여 성능을 높인다.
-
     const [fadeIn, setFadeIn] = useState("fadeIn");
 
     useEffect(() => {

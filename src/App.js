@@ -8,6 +8,7 @@ import MainProduct from "./components/MainProduct";
 import { Route, Routes, Link, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Event from "./components/Event";
+import Cart from "./components/Cart";
 
 function App() {
     const [shoes, setShoes] = useState(PRODUCT_DATA);
@@ -22,7 +23,7 @@ function App() {
                 {/* 221219: 18:00 Nested Routes: 여러 페이지, 여러 유사한 페이지 필요할 때
                     Route를 여는 태그, 닫는 태그로 만들고,
                     그 안에 Route를 넣게 되면 /detail/location detail도 보여주고 location도 보여줄 수 있다.
-                    어디에 보여줄 지는 <Outlet></Outlet> 태그를 Detail 안에 만들어 주면 된다. */}
+                    어디에 보여줄 지는 <Outlet></Outlet> 태그를 Component안에서 원하는 곳에 위치하면 된다. */}
                 <Route path="/about" element={<About />}>
                     <Route path="location" element={<div>위치</div>} />
                     <Route path="membership" element={<div>멤버쉽</div>} />
@@ -32,6 +33,8 @@ function App() {
                     <Route path="one" element={<EventOne />} />
                     <Route path="two" element={<EventTwo />} />
                 </Route>
+                <Route path="/cart" element={<Cart />} />
+
                 {/* 221219 18:10
                     이외에 존재하지 않는 모든 Route에 404 페이지 출력 */}
                 <Route path="*" element={<div>Error: 404</div>} />
