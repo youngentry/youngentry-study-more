@@ -1,5 +1,6 @@
 import { Table } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { state변경함수이름 } from "./store";
 
 // 221221 18:10 redux 설치
 // $ npm install @reduxjs/toolkit react-redux
@@ -10,8 +11,14 @@ const Cart = () => {
     const productData = useSelector((state) => state.product);
     console.log(productData);
 
+    // 221221 19:35 redux state 변경하는 방법
+    // 3. useDispatch()는 store.js에서 가져온 함수를 쓸 수 있도록 합니다.
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user);
+
     return (
         <Table>
+            {user}의 장바구니
             <thead>
                 <tr>
                     <th>#</th>
@@ -21,14 +28,24 @@ const Cart = () => {
                 </tr>
             </thead>
             <tbody>
-                {productData.map((product) => {
+                {productData.map((product, index) => {
                     console.log(product);
                     return (
                         <tr key={product.id}>
-                            <td>{product.id}</td>
+                            <td>{index + 1}</td>
                             <td>{product.name}</td>
                             <td>{product.count}</td>
                             <td>안녕</td>
+                            <td>
+                                <button
+                                    onClick={() => {
+                                        // 4. 함수를 import하고, dispatch()의 인자로 전달합니다.
+                                        dispatch(state변경함수이름());
+                                    }}
+                                >
+                                    +
+                                </button>
+                            </td>
                         </tr>
                     );
                 })}
