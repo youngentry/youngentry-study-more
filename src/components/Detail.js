@@ -108,6 +108,20 @@ const Detail = ({ shoes }) => {
     };
 
     const dispatch = useDispatch();
+
+    // 221223 03:30 로컬스토리지에 방금 본 아이템의 id 저장하기
+    // 1. App에서 로컬스토리지 생성 (이미 있으면 하지 않기)
+    // 2. 로컬스토리지에서 자료 꺼내기
+    // 3. 꺼낸 자료에 데이터 추가하기 (중복 없도록 하기)
+    // 4. 로컬 스토리지에 데이터 추가한 자료 넣기
+    useEffect(() => {
+        const viewedItem = JSON.parse(localStorage.getItem("productId"));
+        viewedItem.push(parseInt(params.id));
+        const viewedItemSet = new Set(viewedItem);
+        const viewedItemArray = Array.from(viewedItemSet);
+        localStorage.setItem("productId", JSON.stringify(viewedItemArray));
+    }, []);
+
     return (
         <>
             {foundShoesData ? (

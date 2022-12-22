@@ -25,6 +25,7 @@ const MainProduct = ({ shoes, setShoes }) => {
     const [dataIndex, setDataIndex] = useState(2);
     const [isLastPage, setIsLastPage] = useState(false);
     const [isDataLoading, setIsDataLoading] = useState(false);
+
     return (
         <Container className="mainProduct">
             <Row>

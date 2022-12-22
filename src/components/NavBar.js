@@ -22,14 +22,6 @@ const NavBar = () => {
 
                     <Nav.Link
                         onClick={() => {
-                            navigate("/mainProduct");
-                        }}
-                    >
-                        MainProduct
-                    </Nav.Link>
-
-                    <Nav.Link
-                        onClick={() => {
                             navigate("/detail/0");
                         }}
                     >

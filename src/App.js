@@ -1,16 +1,23 @@
+import "./css/reset.css";
 import "./css/App.scss";
 import PRODUCT_DATA from "./data/product.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import MainVisual from "./components/MainVisual";
 import Detail from "./components/Detail";
-import MainProduct from "./components/MainProduct";
-import { Route, Routes, Link, Outlet } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import About from "./components/About";
 import Event from "./components/Event";
 import Cart from "./components/Cart";
 
 function App() {
+    // 221223 로컬스토리지는 App에서 생성하면 편하다
+    useEffect(() => {
+        if (localStorage.getItem("productId") === null) {
+            localStorage.setItem("productId", JSON.stringify([]));
+        }
+    }, []);
+
     const [shoes, setShoes] = useState(PRODUCT_DATA);
 
     return (
@@ -18,8 +25,7 @@ function App() {
             <NavBar />
 
             <Routes>
-                <Route path="/" element={<MainVisual />} />
-                <Route path="/mainProduct" element={<MainProduct shoes={shoes} setShoes={setShoes} />} />
+                <Route path="/" element={<MainVisual shoes={shoes} setShoes={setShoes} />} />
                 {/* 221219: 18:00 Nested Routes: 여러 페이지, 여러 유사한 페이지 필요할 때
                     Route를 여는 태그, 닫는 태그로 만들고,
                     그 안에 Route를 넣게 되면 /detail/location detail도 보여주고 location도 보여줄 수 있다.

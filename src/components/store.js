@@ -8,7 +8,7 @@ import userObject from "./reducer/userObjectSlice";
 // 컴포넌트 간에 공유가 필요없다면 그냥 useState()를 쓰는게 좋습니다.
 
 // 221221 1820 스테이트 사용 방법
-// 1. 아래와 같이 생성한다
+// createSlice와 configureStore 형식 따라하기
 const 변수명 = createSlice({
     name: "state를 알기 쉬운 아무이름",
     initialState: "값",
@@ -31,7 +31,6 @@ const user = createSlice({
 export let { state변경함수이름 } = user.actions;
 // 3. import해서 쓰는 방법은 Cart.js 주석으로
 
-// 2. 아래와 같이 생성한 state를 reducer에 저장하면 사용할 수 있다.
 export default configureStore({
     reducer: {
         변수명: 변수명.reducer,
