@@ -1,7 +1,7 @@
 import "./css/reset.css";
 import "./css/App.scss";
 import PRODUCT_DATA from "./data/product.js";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import MainVisual from "./components/MainVisual";
 import Detail from "./components/Detail";
@@ -9,6 +9,20 @@ import { Route, Routes } from "react-router-dom";
 import About from "./components/About";
 import Event from "./components/Event";
 import Cart from "./components/Cart";
+
+// 221224 17:20 Lazy Load 기능으로 import하기
+// 아래와 같은 형태로 import를 하게 되면
+const Datail = lazy(() => import("./components/Detail.js"));
+// 사이트를 발행할 때 하나의 js 파일로 생성되지 않고 별도의 파일로 분리되게 됩니다.
+// 그러면 Datail 컴포넌트가 필요할 때가 되어야 로딩을 시작을 하게 되고
+// => 모든 페이지를 한 번에 로딩하지 않도록 하여 최초 로딩 시간을 줄여줍니다.
+
+// 로딩중이라는 UI를 나타내고자 한다면 아래와 같이 <Suspense>로 감싸주면 됩니다.
+{
+    /* <Suspense fallback={<div>로딩중</div>}>
+   <Routes></Routes>
+</Suspense>; */
+}
 
 function App() {
     // 221223 로컬스토리지는 App에서 생성하면 편하다
