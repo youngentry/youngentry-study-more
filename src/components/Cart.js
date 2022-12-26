@@ -1,4 +1,3 @@
-import { memo, useMemo } from "react";
 import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseAmount, removeProduct } from "./reducer/productSlice";

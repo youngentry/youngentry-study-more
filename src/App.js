@@ -18,11 +18,10 @@ const Datail = lazy(() => import("./components/Detail.js"));
 // => 모든 페이지를 한 번에 로딩하지 않도록 하여 최초 로딩 시간을 줄여줍니다.
 
 // 로딩중이라는 UI를 나타내고자 한다면 아래와 같이 <Suspense>로 감싸주면 됩니다.
-{
-    /* <Suspense fallback={<div>로딩중</div>}>
-   <Routes></Routes>
-</Suspense>; */
-}
+
+// <Suspense fallback={<div>로딩중</div>}>
+//    <Routes></Routes>
+// </Suspense>;
 
 function App() {
     // 221223 로컬스토리지는 App에서 생성하면 편하다
