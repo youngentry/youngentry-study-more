@@ -51,7 +51,7 @@ const BiggerBlueButton = styled(BlueButton)`
 const Detail = ({ shoes }) => {
     const [isNoticeVisible, setIsNoticeVisible] = useState(true);
     const [size, setSize] = useState("");
-    const [tabVisible, setTabVisible] = useState(0);
+    const [tabVisibleIndex, setTabVisible] = useState(0);
 
     const [fadeIn, setFadeIn] = useState("");
     // 221220 22:30 useEffect는 여러개 사용 가능하다.
@@ -196,7 +196,7 @@ const Detail = ({ shoes }) => {
                             </Nav.Link>
                         </Nav.Item>
                     </Nav>
-                    <Tab tabVisible={tabVisible} />
+                    <Tab tabVisibleIndex={tabVisibleIndex} />
                 </div>
             ) : (
                 <div>
@@ -208,7 +208,7 @@ const Detail = ({ shoes }) => {
     );
 };
 
-const Tab = ({ tabVisible }) => {
+const Tab = ({ tabVisibleIndex }) => {
     // 221220 22:10 css className으로 트랜지션 주기
     // opacityZero클래스에 opacity: 0
     // fadeIn클래스에 opacity: 1, transition: 0.5s
@@ -225,9 +225,9 @@ const Tab = ({ tabVisible }) => {
         return () => {
             setFadeIn("");
         };
-    }, [tabVisible]);
+    }, [tabVisibleIndex]);
 
-    return <div className={`opacityZero ${fadeIn}`}>{[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tabVisible]}</div>;
+    return <div className={`opacityZero ${fadeIn}`}>{[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tabVisibleIndex]}</div>;
 };
 
 export default Detail;
