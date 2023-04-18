@@ -1,0 +1,12 @@
+#bgimg {
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.changebg-text {
+  font-size: 18px;
+  font-weight: 800;
+}

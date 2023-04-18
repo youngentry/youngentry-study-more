@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Recap Nomad Lessons</title>
+  </head>
+  <body>
+    <span id="resolution"> BEST at 1366 x 768 Chrome</span>
+    <div id="reset-trans-btn">Menus</div>
+    <div id="change-bg-btn"><i class="far fa-play-circle"></i></div>
+    <main id="all-elements">
+      <div id="section-title">
+        <div class="title">
+          <span>─　R E C A P 　　　Y O U N G 　　　J S　─</span>
+        </div>
+      </div>
+
+      <section id="section-first">
+        <div class="column">
+          <span class="login-title">YOUR NAME</span
+          ><i class="fas fa-signature"></i>
+          <form id="login-form" class="hidden">
+            <input required maxlength="15" type="text" placeholder="name?" />
+            <input type="submit" value="Log In" />
+          </form>
+          <h1 id="greeting" class="hidden"></h1>
+        </div>
+        <div class="column">
+          <span class="clock-title">REAL TIME CLOCK</span
+          ><i class="far fa-clock"></i>
+          <div class="clock-position">
+            <button id="clock">00:00:00</button>
+          </div>
+        </div>
+
+        <div class="column">
+          <span class="changebg-title">CHANGE BG RANDOMLY</span
+          ><i class="far fa-image"></i>
+          <button id="bgimg">CHANGE BG IMAGE</button>
+          <span class="changebg-text">Change the background image</span>
+        </div>
+      </section>
+
+      <section id="section-second">
+        <div class="column">
+          <span class="todo-title">TO DO LIST</span
+          ><i class="fas fa-list-ol"></i>
+          <form id="todo-form">
+            <input type="text" placeholder="What do you want to do?" required />
+          </form>
+          <ul id="todo-list"></ul>
+        </div>
+        <div class="column">
+          <span class="gradient-title">GRADIENT</span
+          ><i class="fas fa-paint-roller"></i>
+          <button class="gradient-btn">SHOW GRADIENT</button>
+          <span class="gradient-text"
+            >Change the color of blocks with gradient</span
+          >
+          <button class="gradient-reset">RESET THE COLOR</button>
+        </div>
+        <div class="column">
+          <iframe
+            src="https://www.youtube.com/embed/83_UnqjGRJs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <span><i class="fab fa-youtube"></i></span>
+        </div>
+      </section>
+
+      <section id="section-third">
+        <div class="column">
+          <span class="quote-title">RANDOM QUOTE</span
+          ><i class="fas fa-feather-alt"></i>
+          <div id="quote">
+            <span class="quote-content"></span>
+            <span class="quote-author"></span>
+          </div>
+          <button class="quote-button">CHANGE</button>
+        </div>
+        <div class="column">
+          <span class="weather-title">WEATHER</span
+          ><i class="fas fa-temperature-high"></i>
+          <div id="weather">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="column">
+          <span><i class="far fa-eye fa-2x"></i></span>
+          <button id="transparent-all">UNSEE</button>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/90c725d086.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/gradient.js"></script>
+    <script src="js/transparent.js"></script>
+  </body>
+</html>
