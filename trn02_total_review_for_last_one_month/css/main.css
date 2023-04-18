@@ -1,0 +1,470 @@
+.Wrap {
+  height: 800vh;
+}
+
+.container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* ↓ @@.topBanner ↓ */
+
+.topBanner {
+  position: sticky;
+  inset: 0 auto auto 0;
+  padding: 30px 0;
+  background: #f1f1f1;
+  z-index: 999;
+}
+.topBanner .inner {
+  position: relative;
+}
+.topBanner h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.topBanner p {
+  font-size: 15px;
+  font-weight: 300;
+}
+.topBanner a {
+  margin: 0 0 0 10px;
+  display: inline-block;
+  padding: 3px 15px 5px 15px;
+  background: #333;
+  color: #fff;
+}
+.topBanner i {
+  position: absolute;
+  inset: 0 0 auto auto;
+  font-size: 21px;
+  padding: 5px;
+  background: #ddd;
+  border-radius: px;
+  cursor: pointer;
+}
+/* ↑ @@.topBanner ↑ */
+
+/* ↓ @@#header ↓ */
+#header {
+  position: sticky;
+  inset: 123px auto auto 0;
+  line-height: 100px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  transition: 0.45s;
+  z-index: 999;
+}
+#header.on {
+  inset: 0 auto auto 0;
+}
+#header .container {
+  justify-content: space-between;
+}
+#header nav > ul {
+  display: flex;
+}
+#header nav > ul > li > a {
+  padding: 0 15px;
+  font-size: 17px;
+}
+#header nav > ul > li ~ li::before {
+  display: inline-block;
+  content: "";
+  width: 1px;
+  height: 14px;
+  background: #ddd;
+}
+#header a {
+  display: inline-block;
+}
+#searchForm input[type="text"] {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid RGB(149, 133, 124);
+  padding: 5px 3px;
+}
+#searchForm input[type="text"]::placeholder {
+  color: RGB(149, 133, 124);
+}
+#searchForm input[type="text"]:focus::placeholder {
+  opacity: 0;
+}
+#searchForm button {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 21px;
+}
+/* ↑ @@#header ↑ */
+
+/* ↓ @@.mainVisual ↓ */
+.mainVisual {
+  position: relative;
+}
+.mainVisual .mainSlider figure {
+  position: relative;
+  height: 600px;
+}
+.mainVisual .mainSlider .itm01 {
+  background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+}
+.mainVisual .mainSlider .itm02 {
+  background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+.mainVisual .mainSlider .itm03 {
+  background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+.mainVisual .mainSlider .inner {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+.mainVisual .mainSlider .inner h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.mainVisual .mainSlider .inner p {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+}
+.mainVisual .mainSlider .inner a {
+  display: inline-block;
+  padding: 6px 24px 8px 24px;
+  background: #333;
+}
+.mainVisual .mainSlider figure h2 {
+  transform: translateY(100px);
+  opacity: 0;
+}
+.mainVisual .mainSlider figure.on h2 {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.4s;
+}
+.mainVisual .mainSlider figure p {
+  transform: translateY(100px);
+  opacity: 0;
+}
+.mainVisual .mainSlider figure.on p {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.4s 0.4s;
+}
+.mainVisual .mainSlider figure a {
+  transform: translateY(100px);
+  opacity: 0;
+}
+.mainVisual .mainSlider figure.on a {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.4s 0.8s;
+}
+.mainVisual .mainSlider .slick-dots {
+  position: absolute;
+  inset: auto auto 100px 50%;
+  transform: translateX(-50%);
+}
+.mainVisual .mainSlider .slick-dots li {
+  display: inline-block;
+}
+.mainVisual .mainSlider .slick-dots li button {
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  width: 22px;
+  height: 22px;
+  margin: 0 2px;
+}
+.mainVisual .mainSlider .slick-dots li.slick-active button {
+  background: #f00;
+  color: #fff;
+}
+.slideNum {
+  position: absolute;
+  inset: 50px auto auto 50%;
+  margin: 0 0 0 600px;
+  transform: translateX(-100%);
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  font-size: 41px;
+}
+.mainArrow i {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(50% -50%);
+  color: (rgba(255, 255, 255, 0.507));
+  font-size: 100px;
+}
+.mainArrow i:nth-child(1) {
+  margin: 0 0 0 -700px;
+}
+.mainArrow i:nth-child(2) {
+  margin: 0 0 0 700px;
+}
+/* ↑ @@.mainContent ↑ */
+
+/* ↓ @@.mainVisual ↓ */
+.mainContent {
+  padding: 100px 0;
+  text-align: center;
+}
+.mainContent h2 {
+  margin: 0 0 10px 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+.mainContent p {
+  margin: 0 0 30px 0;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+.mainContent .container {
+  gap: 30px;
+}
+.mainContent .container figure {
+  flex: 1;
+}
+.mainContent .container img {
+  margin: 0 0 10px 0;
+}
+.mainContent .container strong {
+  display: block;
+  margin: 0 0 10px 0;
+  font-size: 15px;
+}
+.mainContent .container a {
+  display: inline-block;
+  padding: 3px 15px 5px 15px;
+  background: #333;
+  color: #fff;
+  font-size: 15px;
+}
+/* ↑ @@.mainContent ↑ */
+
+/* ↓ @@.mainContent2 ↓ */
+.mainContent2 {
+  padding: 100px 0;
+  text-align: center;
+  background: #f1f1f1;
+}
+.mainContent2 h2 {
+  margin: 0 0 10px 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+.mainContent2 p {
+  margin: 0 0 30px 0;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+.mainContent2 .container {
+  gap: 30px;
+}
+.mainContent2 .container figure {
+  flex: 1;
+}
+.mainContent2 .container img {
+  margin: 0 0 10px 0;
+}
+.mainContent2 .container strong {
+  display: block;
+  margin: 0 0 10px 0;
+  font-size: 15px;
+}
+.mainContent2 .container a {
+  display: inline-block;
+  padding: 3px 15px 5px 15px;
+  background: #333;
+  color: #fff;
+  font-size: 15px;
+}
+/* ↑ @@.mainContent2 ↑ */
+
+/* ↓ @@.mainContent3 ↓ */
+.mainContent3 {
+  padding: 100px 0;
+  text-align: center;
+}
+.mainContent3 h2 {
+  margin: 0 0 10px 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+.mainContent3 p {
+  margin: 0 0 30px 0;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+.mainContent3 .container {
+  gap: 30px;
+}
+.mainContent3 .container figure {
+  flex: 1;
+}
+.mainContent3 .container strong {
+  display: block;
+  margin: 0 0 10px 0;
+  font-size: 15px;
+}
+.mainContent3 .container a {
+  display: inline-block;
+  padding: 3px 15px 5px 15px;
+  background: #333;
+  color: #fff;
+  font-size: 15px;
+}
+.mainContent3 figure .box {
+  overflow: hidden;
+  margin: 0 0 10px 0;
+  transition: border-radius 0.7s;
+}
+.mainContent3 figure:hover .box {
+  border-radius: 50%;
+}
+.mainContent3 figure img {
+  transition: transform 0.5s;
+}
+.mainContent3 figure:hover img {
+  transform: scale(1.3);
+}
+/* ↑ @@.mainContent3 ↑ */
+
+/* ↓ @@.fixedBg ↓ */
+.fixedBg {
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+  background: url(../img/mainvisual01.jpg) no-repeat fixed center center/cover;
+  filter: grayscale(1);
+}
+.fixedBg h2 {
+  margin: 0 0 10px 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+.fixedBg p {
+  margin: 0 0 30px 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+.fixedBg i {
+  padding: 5px;
+  background: #333;
+  vertical-align: -15%;
+  border-radius: 50%;
+}
+/* ↑ @@.fixedBg ↑ */
+
+/* ↓ @@.fixedBg2 ↓ */
+.fixedBg2 {
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+  background: url(../img/mainvisual01.jpg) no-repeat fixed center center/cover;
+}
+.fixedBg2 h2 {
+  margin: 0 0 10px 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+.fixedBg2 p {
+  margin: 0 0 30px 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+.fixedBg2 i {
+  padding: 5px;
+  background: #333;
+  vertical-align: -15%;
+  border-radius: 50%;
+}
+/* ↑ @@.fixedBg2 ↑ */
+
+/* ↓ @@.service ↓ */
+.service {
+  padding: 100px 0;
+}
+
+.service .container {
+  gap: 30px;
+}
+
+.service .container > div {
+  flex: 1;
+}
+.service .container .case {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.service .container iframe {
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.service .container .root_daum_roughmap {
+  position: absolute;
+  inset: 0 0 0 0;
+  width: 100%;
+}
+
+.service .root_daum_roughmap .wrap_map {
+  height: 100%;
+}
+/* ↑ @@.service ↑ */
+
+/* ↓ @@.utb ↓ */
+.utb {
+  padding: 100px 0;
+  color: #fff;
+  text-align: center;
+  filter: grayscale(1);
+}
+
+.utb h2 {
+  margin: 0 0 10px 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+.utb p {
+  margin: 0 0 30px 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+.utb i {
+  padding: 5px;
+  background: #333;
+  vertical-align: 0;
+  border-radius: 50%;
+}
+.utb .zoom {
+}
+/* ↑ @@.utb ↑ */
+
+/* ↓ @@.scrollMe ↓ */
+.scrollMe {
+  padding: 200px 0;
+}
+
+.scrollMe .container {
+  gap: 70px;
+}
+
+.scrollMe .container figure {
+  flex: 1;
+}
+/* ↑ @@.scrollMe ↑ */
