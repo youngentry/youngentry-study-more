@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열05</title>
+  </head>
+  <body>
+    <ul id="UL"></ul>
+    <script>
+      const DATA = [
+        { id: 1, content: "메로나", date: "20220721" },
+        { id: 2, content: "바밤바", date: "20220111" },
+        { id: 3, content: "월드콘", date: "20220222" },
+        { id: 4, content: "거북이", date: "20220303" },
+        { id: 5, content: "메로나", date: "29990909" },
+      ];
+      // 화살표함수에 중괄호{}를 쓰려면 {} 안에 return을 넣어주어야 합니다.
+      //   const RESULT = DATA.map((el) => `<li>${el.content}</li>`).join("");
+      //   console.log(RESULT);
+      //   document.querySelector("#UL").innerHTML = RESULT;
+
+      const RESULT = DATA.filter((el) => el.id !== 3);
+      const NEWLIST = RESULT.map((data) => `<li>${data.content} <small>${data.date}</small></li>`).join("");
+      UL.innerHTML = NEWLIST;
+    </script>
+  </body>
+</html>

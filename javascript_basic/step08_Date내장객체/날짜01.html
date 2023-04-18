@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>날짜 01</title>
+  </head>
+  <body>
+    <div class="date"></div>
+    <script>
+      const DATE = document.querySelector(".date");
+      const 날짜 = new Date();
+      const 요일 = ["일", "월", "화", "수", "목", "금", "토"];
+
+      DATE.innerHTML += 날짜.toLocaleString() + " 년. 월. 일. 시간<br/>"; // 년. 월. 일. 시간
+      DATE.innerHTML += 날짜.toLocaleDateString() + " 년. 월. 일.<br/>"; // 년. 월. 일.
+      DATE.innerHTML += 날짜.getFullYear() + "년.<br/>"; // 년.
+      DATE.innerHTML += 날짜.getMonth() + 1 + "월.<br/>"; // 월.
+      DATE.innerHTML += 날짜.getDate() + "일.<br/>"; // 일.
+      DATE.innerHTML += 날짜.getHours() + "시.<br/>"; // 시.
+      DATE.innerHTML += 날짜.getMinutes() + "분.<br/>"; // 분.
+      DATE.innerHTML += 날짜.getSeconds() + "초.<br/>"; // 초.
+      DATE.innerHTML += 요일[날짜.getDay()] + "요일.<br/>"; // 요일.
+    </script>
+  </body>
+</html>

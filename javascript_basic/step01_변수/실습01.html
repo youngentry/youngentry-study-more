@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수 실습 01</title>
+  </head>
+  <body>
+    <div id="box2" onmouseenter="글자바꾸기2(this)" onmouseleave="글자바꾸기3(this)">come on</div>
+    <div id="box3" onclick="글자바꾸기4(this)">click me</div>
+    <button id="reset" onclick="리셋()">reset</button>
+    <div id="resetCount">reset count</div>
+  </body>
+  <script>
+    const BOX2 = document.getElementById("box2");
+    const BOX3 = document.getElementById("box3");
+
+    const 글자바꾸기2 = function (a) {
+      a.innerText = `mouseenter`;
+      console.log("aaa");
+    };
+    const 글자바꾸기3 = function (b) {
+      b.innerText = `mouseleave`;
+      console.log("bbb");
+    };
+    const 글자바꾸기4 = function (c) {
+      c.innerText = `I'm clicked!`;
+      console.log("bbb");
+    };
+    const 리셋 = function () {
+      BOX2.innerText = "come on";
+      BOX3.innerText = "click me";
+    };
+    리셋();
+
+    let count = 0;
+    const resetBox = document.getElementById("reset");
+    const resetCount = document.getElementById("resetCount");
+    resetBox.addEventListener("click", () => {
+      count++;
+      console.log(count);
+      resetCount.innerText = "reset count :" + count;
+    });
+
+    // BOX3.addEventListener("mouseenter", 글자바꾸기2);
+    // BOX3.addEventListener("mouseleave", 글자바꾸기2);
+    // BOX3.addEventListener("mouseenter", 글자바꾸기3);
+    // BOX3.addEventListener("mouseleave", 글자바꾸기3);
+  </script>
+</html>
