@@ -1,0 +1,190 @@
+높이는 특별한 경우가 아니라면 auto입니다. 높이는 padding으로 조절을 하게 됩니다.
+background나 떠올라서 기존의 layout에서 벗어난 경우에는 auto를 사용하지 않습니다.
+
+//////////////////////
+모듈화
+보통 header와 footer는 고정된 채로 main의 내용이 바뀝니다.
+고정된 부분은 components로 만들어 작업을 합니다.
+
+.wrap : 둘러싸는 박스
+<header></header>
+<main>
+</main>
+<footer></footer>
+
+.container 1200px 안에 들어가는 것은 이름을 부여합니다.
+
+///////////////////////////////////
+
+웹 사이트를 클론코딩 해봅니다.
+<meta>는 검색 타이틀, 설명, 키워드 등의 내용을 담습니다.
+
+우선 폴더를 만듭니다. css, js, img
+
+/////////////////////////////////////
+reset.css
+
+reset을 설정합니다.
+@charset 'utf-8'; 주석을 달 때 한글이 깨지지 않도록 합니다.
+
+font를 설정합니다.
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body {
+    line-height: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+icon 을 설정합니다.
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+
+/////////////////////////////////////
+main.css 를 만듭니다.
+
+jquery를 이용합니다.
+1.x.x 버전을 이용합니다. https://releases.jquery.com/
+
+minified 를 다른이름으로 저장 > js 폴더 안에 저장합니다.
+
+script src=""로 연결을 합니다.
+    <script src="./js/jquery-1.12.4.min.js"></script>
+
+html 연결을 합니다.
+    <script src="./js/main.js"></script>
+
+jquery는 아래처럼 적용합니다. $(function() {})은 DOMcontentloaded 역할을 합니다.
+$(function(){
+    $("h1").hide();
+})
+
+    <title>DK-streel - training01</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <h1>h1입니다.<i class="xi-bars"></i></h1>
+  </body>
+</html>
+
+///////////////////////////////////////
+slick : 부드럽게 슬라이드를 만들 수 있는 플러그인 입니다.
+https://kenwheeler.github.io/slick/
+
+cdn에서 링크를 다른이름으로 저장을 통해 css, js 폴더에 저장합니다.
+CSS
+cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css
+
+JS
+cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js
+
+플러그인을 가져오는 위치는 정해져 있습니다.
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- 플러그인은 여기에 위치합니다. -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <!-- 플러그인은 여기에 위치합니다. -->
+    <script src="./js/main.js"></script>
+
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+
+
+slider는 div안에 생성합니다.
+    <div class="frist_slider">
+      <figure>01</figure>
+      <figure>02</figure>
+      <figure>03</figure>
+    </div>
+
+$("").slick() 으로 슬라이드를 적용할 수 있습니다.
+$(function () {
+  $(".frist_slider").slick();
+});
+/////////////////////////////////////////
+div.wrap으로 감싸 준 뒤에 시작합니다.
+    <div class="wrap">
+      <header class="header"> // header.header 붙이는 사람도 있고 안 붙이는 사람도 있고 다릅니다.
+        
+      </header>
+    </div>
+
+현장에서는 섹션에 이름을 붙여서 씁니다. 섹션은 여러 개를 쓰는 경우가 많기 때문입니다. 
+      <main>
+        <section class="content">
+          
+        </section>
+      </main>
+
+
+높이는 항상 auto로 두고 padding으로 조절합니다.
+
+
+container 안에 넣습니다.
+        <section class="content">
+          <div class="container">
+            <figure>
+              <img src="" alt="">
+            </figure>
+          </div>
+        </section>
+
+사진, strong, p 를 만듭니다.
+              <img src="./img/main_bg01.jpg" alt="DK-steel"> <!-- alt에는 보통 회사명을 넣습니다. -->
+              <strong></strong>
+              <p></p>
+            </figure>
+
+///////////////////////////////////
+html에서 준비가 되었으면 css 작업을 합니다.
+.content {
+  padding: 100px 0;
+}
+
+.content .container {
+  display: flex;
+  gap: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+(css 작성 순서)
+position  >
+display >
+width >
+height >
+font >
+padding >
+margin >
+transform
+
+이미지 크기를 동일하게 합니다.
+.content .container figure {
+  flex: 1;
+}
+
+.content img {
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+
+inline은 margin이 적용이 안되기 때문에 display: block으로 바꿉니다.
+.content strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+line-height는 보통 1.45를 많이 씁니다.
+.content p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.25;
+}

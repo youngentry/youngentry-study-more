@@ -1,0 +1,149 @@
+주석 입력 방법입니다. 협업을 할 때에는 ~를 누가 수정했다고 기록을 하는 것이 중요합니다.
+    <div class="Wrap">
+        <!-- { 2022.05.30 young -->
+        <header class="header"></header>
+        <!-- 2022.05.30 young } -->
+
+/* 2022.05.30 young */
+.header {}
+
+// 2022.05.30 young
+document.querySelector('.header').style.color = 'red'
+
+
+
+
+html 기본 틀입니다.
+<body>
+    <div class="Wrap">
+        <!-- { 2022.05.30 young -->
+        <header class="header">
+
+        </header>
+        <!-- 2022.05.30 young } -->
+        <main>
+
+        </main>
+        <footer>
+            
+        </footer>
+    </div>
+</body>
+
+
+
+없애기 none의 대척에 있는 나타내기는block 입니다.
+display: none; <-> display: block;
+
+
+
+!important는 css가 js보다 우선하게 하는 방법입니다.
+하지만 기억만 해 둘 뿐 실제로 이용할 일은 거의 없습니다. 미숙하다는 인식을 받습니다.
+.header {
+    color: blue !important;
+}
+
+
+
+반응형으로 만드는 방법입니다. 768px 이하의 사이즈일 경우에 적용됩니다. 기준 768px는 아이패드 가로사이즈였습니다.
+@media (max-width:768px) {
+    .header {
+        color: red;
+      }
+}
+
+
+
+모바일버전과 pc버전 간 변환하는 버튼을 만들 때 이용하는 방법입니다.
+      <div class="mopen">open</div>
+
+.mopen {
+    display: none;
+}
+@media (max-width:768px) {
+      .mopen {
+        display: block;
+    }
+}
+
+
+
+반응형 화면을 구현해봅니다. 기본적으로 설정한 내용을 @media 안에 붙여 넣고 필요한 속성으로 바꾸면 됩니다.
+@media (max-width:1000px) {
+    .header {
+        line-height: 100px;
+        background: #fff;
+      }
+      
+      .header .container {
+        display: flex;
+        justify-content: space-between;
+        width: auto; /* 1200px 고정이 아닌 auto 로 변환합니다. */
+        margin: 0 auto;
+      }
+////////////////////
+      .header .container ul {
+        display: flex;
+        gap: 40px;
+      }
+를
+  .header .container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 40px;
+  }
+로 속성을 바꿉니다.
+////////////////////
+메뉴 버튼을 누르면 left: -100%; 값은 .on이 붙었을 때 left: 0;이 되도록 하면 숨기고 나타나도록 할 수 있습니다.
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: calc(100% - 90px);
+    height: 100vh;
+    background: #ff0;
+    z-index: 999;
+  }
+  nav.on {
+    left: 0;
+  }
+
+js에서 click 이벤트를 구현합니다.
+document.querySelector('.mopen').addEventListener('click', function() {
+    document.querySelector('nav').classList.toggle('on')
+})
+
+
+
+부드럽게 만들기 위해 transition을 줍니다.
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: calc(100% - 90px);
+    height: 100vh;
+    background: #ff0;
+    z-index: 999;
+    transition: left 0.5s;
+  }
+
+//////////////////////
+메뉴박스를 x로 바꿉니다.
+document.querySelector(".mopen").addEventListener("click", function () {
+  document.querySelector("nav").classList.toggle("on");
+  this.classList.toggle("on");
+});
+
+  .mopen.on span:nth-child(1) {
+    display: none;
+  }
+  .mopen.on span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  .mopen.on span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  .mopen.on span:nth-child(4) {
+    display: none;
+  }

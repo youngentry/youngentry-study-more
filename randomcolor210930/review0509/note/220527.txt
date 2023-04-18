@@ -1,0 +1,153 @@
+image 이름을 붙일 때 m01 : main, 두 자리 수가 넘어갈 경우를 대비해 01 부터 시작합니다.
+
+이미지 크기가 자신의 크기를 유지하여 넘칠 때는 max-witdth 를 적용하면 됩니다.
+img {
+    max-width: 100%;
+}
+
+
+
+transform: scale로 이미지 크기를 키울 때 overflow: hidden; 을 적용하지만 이미지 크기가 넘친다면 img 를 div로 감싸주면 됩니다. 
+              <div class="box">
+                <img src="./img/main_bg01.jpg" alt="" />
+              </div>
+
+
+
+
+strong은 inline이고 p는 block입니다.
+line-height가 적용이 되는 부분, margin이 적용이 되는 부분이 겹쳐도 관습적으로 적용하는 속성 위치가 있습니다.
+.content strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 0 17px 0;
+}
+.content p {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+
+
+shortcut
+.left+.right
+
+
+
+
+화면전체를 가르는 경계선을 만드는 방법입니다. container의 부모에 border를 주면 됩니다. <img 첨부>
+        <section class="product">
+          <div class="container">
+.product {
+  padding: 30px 0;
+  border-top: 1px solid var(--gc);
+}
+
+
+flex 활용하는 방법입니다. 중요합니다. <img첨부>
+3칸 중에 2칸을 차지하게 됩니다.
+.product .container .left {
+  flex: 2;
+}
+3칸 중에 1칸을 차지하게 됩니다.
+.product .container .right {
+  flex: 1;
+}
+
+
+
+
+a에 전화번호와 이메일 입력하는 방법입니다. tel:과 mailto:
+                <li><a href="tel:051-325-0355">051-325-0355</a></li>
+                <li>Fax : 051-326-0356</li>
+                <li>
+                  <a href="mailto:kgbds97@naver.com"
+                    >e-mail : kgbds97@naver.com</a
+                  >
+                </li>
+
+
+
+text-align: right; 글자를 오른쪽 끝으로 붙이는 방법입니다.
+.customer .left {
+  text-align: right;
+}
+
+
+
+  text-transform으로 글자를 대문자로 바꾸는 등의 변환을 할 수 있습니다.
+.customer>div a p {
+  text-transform: uppercase;
+}
+
+
+
+이미지 위의 글자를 깔끔하게 보이도록 하는 방법은 text-shadow입니다.
+  text-shadow: 0 0 3px var(--dc);
+
+
+
+이미지 위에 패턴을 넣는 방법이 있습니다.  background: url(../img/pt-bg01.png);
+작은 패턴들이 반복되면서 이미지 전체를 덮습니다.
+.customer > div a {
+  display: block;
+  color: white;
+  padding: 50px 40px;
+  text-shadow: 0 0 3px var(--dc);
+  background: url(../img/pt-bg01.png);
+}
+
+
+
+<address> 태그는 회사 정보를 나타낼 때 씁니다. 글자기울기 효과가 들어갑니다.
+font-style: normal; 을 적용하여 기울기를 없앨 수 있습니다.
+카피라이트의 마크는 &copy; 로 만듭니다.
+            <div class="copy">&copy; DK스틸 All Rights Reserved.</div>
+
+
+
+
+flex로 5만큼에 대해서 1대 4로 나눕니다.
+.footer .logo {
+  flex: 1;
+}
+.footer address {
+  flex: 4;
+}
+
+
+
+
+글자 사이 경계선을 만드는 방법입니다.
+inline-block일 경우에는
+.footer address ul li {
+  display: inline-block;
+}
+가상요소선택자도 마찬가지로 inline-block으로 만들어 주고 li~li 로 첫번째 li는제외합니다.
+.footer address ul li~li::before{
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background: var(--gc);
+}
+
+
+
+패턴 넣기 2 입니다. 가상요소 선택자로 section::after에 만듭니다.
+.main_visual::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+문제는 이미지만이 아니라 slogan도 함께 가려집니다.
+z-index를 주면 해결됩니다.
+.main_visual .slogan {
+  z-index: 999;
+}

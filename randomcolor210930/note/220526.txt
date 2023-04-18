@@ -1,0 +1,255 @@
+dl 태그는 dt 또는 dd 만을 자식으로 가집니다.
+정의 및 특징
+<dl> 태그는 용어(term)와 그에 대한 설명(description)을 리스트 형식으로 정의할 때 사용합니다.
+<dl> 요소는 용어(term)나 이름(name)을 나타내는 <dt> 요소와 해당 용어에 대한 설명을 나타내는 <dd> 요소로 구성됩니다.
+
+
+
+
+ /* position: relative, absolute, fixed 모두 기준이 될 수 있습니다. */
+
+
+
+
+atuo와 0사이에는 중간단계가 없기 때문에 transition이 적용되지 않습니다.
+.top_banner .container {
+  transition: 0.5s;
+}
+
+.top_banner .container.on {
+  height: 0;
+  overflow: hidden;
+}
+
+
+
+close 버튼의 텍스트를 open 으로 바꾸는 방법입니다.
+버튼 안에 icon을 넣습니다.
+    <div class="top_banner">
+        <div class="container">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>Lorem, ipsum dolor.</p>
+        </div>
+        <button>
+            <i class="xi-arrow-top"></i>
+        </button>
+    </div>
+    <header class="header">
+        헤드
+    </header>
+
+css로 가상요소선택자를 만듭니다.
+.top_banner button::after {
+    content: "close";
+}
+.top_banner.active button::after  {
+    content: "open";
+}
+
+.active 가 없다면 close .acitve가 있다면 open으로 바뀝니다.
+$(function () {
+    $('.top_banner button').on('click', function(){
+        $('.top_banner').toggleClass('active');
+    })
+  });
+  
+css로 높이와 overflow: hidden; ,transition을 설정합니다.
+.top_banner .container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.top_banner.active .container {
+  height: 0;
+}
+
+.active가 붙으면 아이콘을 회전시킵니다.
+.top_banner.active i {
+  transform: rotate(180deg);
+}
+.top_banner {
+  position: relative;
+  background-color: #ff0;
+  border-bottom: 3px red solid;
+}
+마우스포인터는 cursor 속성으로 바꿉니다.
+.top_banner button {
+  position: absolute;
+  left: 50%;
+  bottom: -23px;
+  width: 100px;
+  line-height: 20px;
+  margin-left: 550px;
+  color: #333;
+  background-color: #ff0;
+  border: 3px red solid;
+  border-top: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+.header {
+  line-height: 100px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+이어서 옆에서 나오는 기능을 구현합니다.
+아이콘을 만듭니다.
+    <ul class="right_banner">
+        <li><i class="xi-bars"></i><span>Lorem, ipsum.</span></li>
+        <li><i class="xi-close"></i><span>Lorem, ipsum.</span></li>
+        <li><i class="xi-heart"></i><span>Lorem, ipsum.</span></li>
+    </ul>
+
+vh는 화면크기의 배율입니다.
+.right_banner {
+  position: fixed;
+  top: 50vh;
+  right: -100px;
+  background: #ff0;
+  transition: 0.5s;
+}
+
+.right_banner.active {
+  right: 0;
+}
+
+
+
+해 만들기
+해의 몸통을 만듭니다.
+.sun {
+    position: absolute;
+    top: 300px;
+    right: 300px;
+    width: 100px;
+    height: 100px;
+    background: #f00;
+    border-radius: 50%;
+}
+해의 불꽃을 만듭니다.
+.sun li:nth-child(1){
+    top:48px;
+    left:-40px;
+}
+.sun li:nth-child(2){
+    top:48px;
+    left:120px;
+}
+.sun li:nth-child(3){
+    top:-20px;
+    left:40px;
+    transform: rotate(90deg);
+}
+.sun li:nth-child(4) {
+    top:120px;
+    left:40px;
+    transform: rotate(90deg);
+}
+회전하는 애니메이션을 줍니다. @keyframes를 이용합니다.
+@keyframes sun_move {
+  to {
+    transform: rotate(360deg);
+  }
+}
+animation은 .sun 에 줍니다. 
+.sun {
+  animation: sun_move 2s infinite; /* keyframes이름, 시간, 반복수 */
+}
+
+자동차를 만듭니다.
+    <ul class="car">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+.car {
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    width: 200px;
+    height: 100px;
+    background: #00f;
+    border-radius: 50px 50px 0 0;
+}
+
+바퀴를 만듭니다.
+.car li:nth-child(1){
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 50px;
+    background: skyblue;
+    border-radius: 30px 0 0 0 ;
+}
+.car li:nth-child(2){
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background: rgb(235, 135, 135);
+    border-radius: 10px ;
+}
+.car li:nth-child(3){
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: rgb(235, 135, 135);
+    border-radius: 10px ;
+}
+
+바퀴 회전 keyframes를 만듭니다. 
+@keyframes baki {
+    to {
+        transform: rotate(360deg);
+    }
+}
+animaition을 줍니다.
+.car li:nth-child(2){
+    animation: baki 0.5s infinite linear;
+}
+.car li:nth-child(3){
+    animation: baki 0.5s infinite linear;
+}
+
+자동차 이동 keyframes를 만듭니다.
+@keyframes car_move {
+    to {
+        right: 2000px;
+    }
+}
+.car에 animation을 적용합니다. 
+.car {
+    animation: car_move 1s infinite linear;
+}
+
+하트비트를 만듭니다.
+하트를 만듭니다.
+.myheart {
+    position: absolute;
+    top: 250px;
+    left:250px;
+    color: #f00;
+    font-size: 50px;
+}
+keyframes를 만듭니다.
+크기가 커지며 투명해집니다.
+@keyframes heart {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}

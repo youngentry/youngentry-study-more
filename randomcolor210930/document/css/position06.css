@@ -1,0 +1,55 @@
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+
+.top_banner button::after {
+  content: "close";
+}
+
+.top_banner.active button::after {
+  content: "open";
+}
+
+.top_banner .container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.top_banner.active .container {
+  height: 0;
+}
+
+.top_banner.active i {
+  transform: rotate(180deg);
+}
+
+.top_banner {
+  position: relative;
+  background-color: rgb(221, 255, 251);
+  border-bottom: 3px #ddd solid;
+}
+
+.top_banner button {
+  position: absolute;
+  left: 50%;
+  bottom: -23px;
+  width: 100px;
+  line-height: 20px;
+  margin-left: 550px;
+  transform: translateX(-50%);
+  color: #333;
+  background-color: rgb(221, 255, 251);
+  border: 3px #ddd solid;
+  border-top: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.header {
+  line-height: 100vh;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}

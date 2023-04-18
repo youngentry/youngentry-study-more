@@ -1,0 +1,56 @@
+#section-first > div,
+#section-second > div,
+#section-third > div,
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.login-title,
+.clock-title,
+.todo-title,
+.quote-title,
+.changebg-title,
+.gradient-title,
+.weather-title {
+  position: absolute;
+  top: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.column {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  transition: transform 0.5s ease-in-out;
+}
+
+.column:hover {
+  will-change: transform;
+  transform: scale(1.054);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+i {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+button {
+  background: rgb(44, 42, 42);
+  color: #efefef;
+  transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+button:hover {
+  background: rgb(132, 169, 212);
+  color: white;
+}

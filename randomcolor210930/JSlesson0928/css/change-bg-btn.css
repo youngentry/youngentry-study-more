@@ -1,0 +1,16 @@
+#change-bg-btn {
+  display: none;
+  position: absolute;
+  top: 65px;
+  right: 440px;
+  color: rgba(0, 0, 0, 0.7);
+  transition: color 0.2s ease-in-out;
+}
+
+#change-bg-btn:hover {
+  color: rgba(255, 31, 31, 0.815);
+}
+
+#change-bg-btn i {
+  font-size: 60px;
+}

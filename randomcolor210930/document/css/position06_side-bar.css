@@ -1,0 +1,219 @@
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+
+.top_banner button::after {
+  content: "close";
+}
+
+.top_banner.active button::after {
+  content: "open";
+}
+
+.top_banner .container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.top_banner.active .container {
+  height: 0;
+}
+
+.top_banner.active i {
+  transform: rotate(180deg);
+}
+
+.top_banner {
+  position: relative;
+  background-color: rgb(221, 255, 251);
+  border-bottom: 3px #ddd solid;
+}
+
+.top_banner button {
+  position: absolute;
+  left: 50%;
+  bottom: -23px;
+  width: 100px;
+  line-height: 20px;
+  margin-left: 550px;
+  transform: translateX(-50%);
+  color: #333;
+  background-color: rgb(221, 255, 251);
+  border: 3px #ddd solid;
+  border-top: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.header {
+  line-height: 100vh;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.right_banner {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  height: 100vh;
+  right: -103px;
+  background: #ff0;
+  transition: 0.5s;
+  border-left: 3px #ddd solid;
+}
+
+.right_banner li i {
+  position: absolute;
+  top: 50%;
+  right: 102px;
+  transform: translateY(-50%);
+  background: #ff0;
+  border-left: 3px #ddd solid;
+}
+
+.right_banner li:nth-child(1) i {
+  padding-top: 10px;
+  border-top-left-radius: 3px;
+  transform: translateY(-125%);
+  border-top: 3px #ddd solid;
+  border-top-left-radius: 5px;
+}
+
+.right_banner li:nth-child(3) i {
+  padding-bottom: 10px;
+  border-bottom-left-radius: 3px;
+  transform: translateY(25%);
+  border-bottom: 3px #ddd solid;
+  border-bottom-left-radius: 5px;
+}
+
+.right_banner.active {
+  right: 0;
+}
+
+.sun {
+  position: absolute;
+  top: 300px;
+  right: 300px;
+  width: 100px;
+  height: 100px;
+  background: #f00;
+  border-radius: 50%;
+  animation: sun_move 3s infinite linear;
+}
+
+.sun li {
+  position: absolute;
+  width: 20px;
+  height: 5px;
+  background: #f00;
+}
+
+.sun li:nth-child(1) {
+  top: 48px;
+  left: -40px;
+}
+.sun li:nth-child(2) {
+  top: 48px;
+  left: 120px;
+}
+.sun li:nth-child(3) {
+  top: -20px;
+  left: 40px;
+  transform: rotate(90deg);
+}
+.sun li:nth-child(4) {
+  top: 120px;
+  left: 40px;
+  transform: rotate(90deg);
+}
+
+@keyframes sun_move {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    right: 50px;
+  }
+  100% {
+  }
+}
+
+.car {
+  position: fixed;
+  bottom: 50px;
+  right: -400px;
+  width: 250px;
+  height: 50px;
+  background: rgb(67, 144, 189);
+  border-radius: 50% 50% 10px 10px;
+  animation: car_move 3s infinite ease-out;
+}
+
+.car li:nth-child(1) {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  width: 150px;
+  height: 40px;
+  background: skyblue;
+  border-radius: 50% 10px 10px 10px;
+}
+.car li:nth-child(2) {
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  background: rgb(235, 135, 135);
+  border-radius: 10px;
+  border: #f00 1px solid;
+  animation: baki 0.5s infinite linear;
+}
+
+.car li:nth-child(3) {
+  position: absolute;
+  bottom: -15px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgb(235, 135, 135);
+  border-radius: 10px;
+  border: #f00 1px solid;
+  animation: baki 0.5s infinite linear;
+}
+
+@keyframes baki {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes car_move {
+  to {
+    background: rgb(255, 0, 0);
+    right: 1200px;
+  }
+}
+
+.myheart {
+  position: absolute;
+  top: 250px;
+  left: 250px;
+  color: #f00;
+  font-size: 50px;
+  animation: heart 1s infinite;
+}
+
+@keyframes heart {
+  to {
+    top: 200px;
+    transform: scale(2);
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,64 @@
+h1 {
+  line-height: 100px;
+  background: red;
+}
+
+nav {
+  line-height: 100px;
+  background: rgb(0, 0, 255);
+}
+
+.right {
+  line-height: 100px;
+  background: yellow;
+}
+
+.header01 {
+  display: flex;
+}
+
+.header02 {
+  display: flex;
+  justify-content: center;
+}
+
+.header03 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header04 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header05 {
+  display: flex;
+}
+
+.header05 nav {
+  margin: 0 0 0 auto;
+}
+
+.basic {
+  line-height: 100px;
+}
+
+.basic .container {
+  display: flex;
+  width: 1200px; /*표준 사이즈*/
+  margin: 0 auto; /*자동으로 늘리기*/
+}
+
+.basic nav {
+  margin: 0 0 0 auto; /*중요합니다. nav를 기준 왼쪽에 있는 객체와 거리를 두어 양 끝으로 배치합니다. */
+}
+
+.basic nav ul {
+  display: flex;
+  gap: 30px; /*gap으로 객체간 거리를  동일하게 조절합니다.*/
+}
+
+.basic .icon {
+  margin: 0 0 0 30px;
+}

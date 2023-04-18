@@ -1,0 +1,275 @@
+마우스이벤트
+hover : 마우스가 올라간 상태
+
+
+////////////////////////
+js를 적용시키기 위해서는 body의 마지막에 script를 위치하면 됩니다.
+<body>
+    <h1>
+        테스트
+    </h1>
+    <script src="../js/position03.js"></script>
+</body>
+
+또 다른 방법은 head의 마지막에 위치시킵니다. 그리고 defer 속성을 줍니다.
+    <script src="../js/position03.js" defer></script>
+</head>
+
+js를 실무에서 이용하는 방법은 아래와 같습니다.
+window.addEventListener("DOMContentLoaded", function () {});
+DOMContentLoaded 이벤트와 load를 사용한다. DOM Tree 분석이 끝나면 DOMContentLoaded 이벤트가 발생하며, 그 외 모든 자원(이미지, 동영상 등등..)이 다 받아져서 브라우저에 렌더링까지 다 끝난 시점에 Load가 발생한다. 보통 DOM Tree가 다 만들어지면 DOM에 접근할 수 있기 때문에 주로 DOMContentLoaded를 사용한다.
+
+////////////////////
+id는 고유합니다. class와 다르게 여러 이름을 부여할 수 없습니다.
+    <section id="event">
+
+//////////////////
+글자 줄바꿈은 <br />입니다.
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
+        Libero nemo optio harum sit blanditiis cupiditate explicabo! Magni
+        suscipit minima nisi!
+      </p>
+
+//////////////
+이미지는 figure 안에 넣습니다.
+
+        <div class="container">
+            <figure>
+                <img src="../img/main_bg01.jpg" alt="">
+            </figure>
+ /////////////
+width 속성과 max-width 속성은 비슷해 보이지만 분명한 차이가 있다. width 속성은 속성값을 100%로 설정할 경우 요서의 크기를 100%로 유지하지만, max-width 속성은 속성값을 100%로 설정할 경우 요소의 기본 크기 이상으로는 크기가 조절되지 않는다.
+
+#event img {
+    max-width: 100%;
+}
+
+///////////////
+reset.css로 img 사이의 틈을 지웁니다.
+img {
+    vertical-align: middle;
+}
+
+//////////////////
+#event figure {} 후손 중에서 찾습니다.
+#event>figure {} 자식 중에서만 찾습니다.
+
+//////////////
+서로 다른 사이즈의 이미지를 같은 크기로 만듭니다.
+#event figure {
+    flex: 1
+}
+
+
+////////////
+(자바스크립트의 최신문법은 인터넷 익스플로러에서 작동하지 않습니다. gap이 원인이구나 하는 것을 떠올려야 합니다.)
+gap은 보통 30px로 합니다.
+#event .container {
+    display: flex;
+    gap:30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+///////////////
+hover로 마우스를 올렸을 때 변화하는 효과를 줍니다.
+#event .container figure:hover img {
+    transform: scale(2); /* 2배로 커집니다. */
+}
+
+//////////////////////////
+transition은 변화하는 대상(img)에 부여합니다.
+#event img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+#event .container figure:hover img {
+    transform: scale(2); 
+}
+/////////////////////////
+overflow: hidden; 박스의 사이즈를 넘어서는 부분은 나타나지 않도록 합니다.
+#event figure {
+  flex: 1;
+  overflow: hidden;
+}
+
+///////////////////////
+무언가를 넣을 예정인 자리에는 "#!"을 입력합니다.
+                <a href="#!"></a>
+
+////////////////////
+depth 가 4 이상이면 좋지 않습니다.
+#event .container figure a {} XXX
+#event figure a {} OOO
+
+//////////////
+margin으로 조절을 하게 되면 글자가 한 가운데로 오지 않고 글자길이에 따라 양 옆의 사이즈가 달라지게 됩니다.
+#event figure a {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 30px;
+    background: #333;
+    color: #fff;
+}
+
+//////////////////////////
+absolute는 기준을 잡아주지 않으면 body가 기준이 됩니다.
+#event figure a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 30px;
+  background: #333;
+  color: #fff;
+}
+
+
+//////////////////////////////////
+figure를 """기준"""으로 만들기 위해서는 position: relative; 속성을 주면 됩니다.
+#event figure {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+#event figure a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 30px;
+  background: #333;
+  color: #fff;
+}
+////////////////////////////////////
+more가 나타나는 연출을 합니다. 
+#event figure {
+  position: relative;
+  flex: 1;
+  overflow: hidden; /* 크기를 벗어나면 사라지게 합니다. */
+}
+
+#event figure a {
+  position: absolute;
+  top: -40px; /* -40px만큼 위로 이동시키며 overflow: hidden과 함께 보이지 않게 됩니다. */
+  left: 0;
+  padding: 10px 30px;
+  background: #333;
+  color: #fff;
+  transition: 0.2s; /* 자연스럽게 나타나는 연출을 합니다. */
+}
+
+#event figure:hover a {
+  top: 0; /* 제자리로 돌아올 수 있도록 합니다. */
+}
+
+/////////////////////////
+html이 아닌 box를 만들 때 css로 하기 위해서 이용합니다. ::after ::before
+div 빈 박스로 막대나 빈 박스 들을 만드는 것은 웹 표준에 어긋납니다.
+이를 대신하여 가상요소선택자 : css 로 박스를 만들 수 있습니다.
+        <h2>
+        < 이 곳은 before 입니다. >
+            Lorem ipsum dolor sit amet.
+        < 이 곳은 after 입니다. >
+        </h2>
+#event h2::after {
+  content: "뒤";
+}
+
+
+이를 이용해 h2 아래에 붉은색 선을 세로로 만들 수 있습니다.
+#event h2::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background: #f00;
+  margin: 20px auto;
+}
+
+
+h2 양 옆에 붉은색 선을 가로로 만들려면 before를 추가합니다.
+#event h2::before {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background: #f00;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+#event h2::after {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background: #f00;
+  margin: 0 10px;
+  vertical-align: middle; /* 속성으로 박스 한 가운데로 오도록 할 수 있습니다. */
+}
+
+//////////////////////////
+CDN(Content Delivery Network)은 지리적으로 분산된 여러 개의 서버입니다. 
+웹 콘텐츠를 사용자와 가까운 곳에서 전송함으로써 전송 속도를 높입니다.
+무료로 어디에서나 이용가능한 소스로 이해하면 됩니다.
+
+//////////////////////////////
+font를 적용하는 방법입니다. (font는 한 가지 또는 두 가지만 씁니다.)
+https://fonts.google.com/
+trending 순으로 정렬되어 있기 때문에 많이 이용하는 폰트를 우선하여 이용하면 됩니다. (Noto Sans 가 인기가 많습니다.)
+font-weight는 100 300 400 500 700 900 정해져 있습니다. 스타일을 추가합니다.
+@import를 체크합니다. <style> </style> 사이의 내용을 복사합니다. 
+(@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+css의 가장 처음에 붙여넣습니다.
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+font-size가 홀수일 때 가독성이 좋습니다. 중요합니다. 14px은 반드시 피합니다.
+
+
+//////////////////////////
+icon을 가져와 이용하는 방법입니다.
+https://xpressengine.github.io/XEIcon/started.html 
+
+//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css
+를 복사합니다.
+
+css의 가장 처음에 다음과 같이 입력합니다.
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css')
+
+icon을 이용하기 위해서는 <i>tag를 이용합니다.
+      <h2><i class="xi-bars"></i>Lorem ipsum dolor sit amet.</h2>
+아이콘의 class="" 클래스명이 아이콘을 결정합니다.
+
+//////////////////////////////
+아이콘은 기본적으로 inline-block 입니다.
+#event i {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%; /* 테두리를 둥글게 만듭니다. */
+}
+
+미묘하게 높이가 틀려있다면 vertical-align: middle;을 적용합니다.
+#event i {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+///////////////////
+position: static; 으로 되돌리는 과정을 이해해야 합니다.
+absolute는 다른 박스에 간섭하지 않아 공간을 차지하지 않습니다.
+필요에 따라 static을 이용해 공간을 차지하게 만들어야 합니다.
+
+/////////////////
+width는 auto와 100% 경우를 잘 구분해야합니다.
+
+
+5월20일 5일차 - 마우스이벤트 hover, font, icon
+

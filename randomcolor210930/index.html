@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ol li {
+        margin: 0 0 30px 0;
+        border-bottom: 1px solid #ddd;
+        padding: 0 0 30px 0
+      }
+      strong {
+        display: block;
+        color: #f00;
+      }
+      a {
+        font-size: 19px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>display</h2>
+    <ol>
+      <li>
+        <!-- 
+                2022.05.17 young
+                경로
+                ./ 나의 형제 레벨
+                ../ 나의 부모 레벨 
+            -->
+        <a href="./doc/box01.html" target="_blank">box 01</a>
+        <p>태그의 일반적인 성질에 대해서 배웁니다.</p>
+        <strong>매우 중요합니다.</strong>
+        <em>2022.05.17</em>
+
+      </li>
+      <li>
+        <a href="./doc/box02.html" target="_blank">box 02</a>
+        <p>박스의 일반적인 성질에 대해서 배웁니다.</p>
+        <strong>매우 중요합니다.</strong>
+        <em>2022.05.17</em>
+      </li>
+      <li>
+        <a href="./doc/box03.html" target="_blank">box 03</a>
+        <p>박스를 가로로 나열해보았습니다.</p>
+        <strong>아주 아주 중요합니다.</strong>
+        <em>2022.05.17</em>
+      </li>
+      <li>
+        <!-- 
+                2022.05.18 young
+                box 레이아웃 header 만들기
+            -->
+        <a href="./doc/box04.html" target="_blank">box 04</a>
+        <p>레이아웃의 기초 박스의 위치변경. display flex를 이용한 박스배열</p>
+        <p>박스를 가운데로, 양쪽 끝으로 배치합니다.
+          <p>width: 1200px; /*표준 사이즈*/</p>
+          <p> margin: 0 auto; /*자동으로 늘리기*/</p>
+          <strong>margin: 0 0 0 auto; /*중요합니다. nav를 기준 왼쪽에 있는 객체와 거리를 두어 양 끝으로 배치합니다. */</strong>
+          <p>  gap: 30px; /*gap으로 객체간 거리를  동일하게 조절합니다.*/</p>
+
+        </p>
+        <em>2022.05.18</em>
+      </li>
+    </ol>
+    <h2>position</h2>
+    <ol>
+      <li>
+        <!-- 
+          2022.05.19 young
+          position: static, relative, absolute, fixed
+        -->
+        <a href="./doc/position01.html">position의 기초</a>
+        <p>display 의 속성 none, block, inline-bloxk, inline, flex 을 이해합니다.</p>
+        <p>position 의 속성 static, relative, absolute, fixed 을 이해합니다.</p>
+        <em>2022.05.19</em>
+      </li>
+
+      <li>
+        <!-- 
+          2022.05.19 young
+          팝업창을 통해 포지션을 배웁니다.
+        -->
+        <a href="./doc/position02.html">position: pop-up 창 만들기</a>
+        <p>팝업창을 통해 포지션을 배웁니다.</p>
+        <p>transform: translate(-50%, -50%); transform은 layout을 깨지 않습니다. 자기 자신을 기준으로 합니다.</p>
+      <p><strong>팝업창 기본 형태는 외웁니다.</strong>
+        .popup {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 350px;
+            background: red;
+        }</p>
+      <strong>addEventListener를 이해합니다.</strong>
+        .addEventListener('click', function()) </p>
+      <p> <strong>querySelector를 이해합니다.</strong> 
+            document
+        .querySelector(".popup button")
+        .addEventListener("click", function () {
+          console.log("done");
+          document.querySelector(".popup").style.display = "none";
+        }); </p>
+        <strong>display:none(과 같이 수치가 없는, 중간단계가 없는 속성)은 trasition이 적용 안됩니다.</strong>
+        <p>양방향을 지정하면  width를 지정하지 않아도 사이의 간격 만큼 span의 width가 나타나게 됩니다.
+          left: 5px;
+          right: 5px;
+        </p>
+        <em>2022.05.19</em>
+      </li>
+
+      <li>
+        <!-- 
+          2022.05.20 young
+          js hover
+        -->
+        <a href="./doc/position03.html">position의 기초</a>
+        <strong>마우스이벤트 hover: 를 배웁니다.</strong>
+        <p>js를 적용시키기strong위한 방법을 배웁니다. (3가지)</p>
+        <p>가상요소선택자 ::after ::before를 배웁니다.</p>
+        <strong>font를 적용하는 방법, icon을 적용하는 방법을 배웁니다.</strong>
+        <em>2022.05.20</em>
+      </li>
+      <li>
+        <!--       
+                2022.05.25 young
+                
+              -->
+              <a href="./doc/position04.html">position04</a>
+              <p> JS 클릭에 반응하여 top 위치를 바꾸는 효과를 구현합니다. </p>
+              <p> overflow: hidden;을 이용해 보이지 않는 부분은 가립니다.</p>
+              <em>2022.05.25</em>
+            </li>
+      <li>
+        <!--       
+                2022.05.25 young
+                
+              -->
+              <a href="./doc/position04_test.html">position04_smile-sad </a>
+              <p> JS 클릭에 반응하여 웃는 표정과 슬픈 표정을 구현합니다. </p>
+              <em>2022.05.25</em>
+      </li>
+      <li>
+        <!--       
+                2022.05.26 young
+                close 기능 구현
+              -->
+              <a href="./doc/position05.html">position05</a>
+              <p> JS 클릭에 반응하여 웃는 표정과 슬픈 표정을 구현합니다. 쌤 버전입니다.</p>
+              <p> JS close 버튼을 누르면 height가 바뀌어 사라지는 연출을 합니다.</p>
+              <em>2022.05.26</em>
+      </li>
+      <li>
+        <!--       
+                2022.05.26 young
+                close <-> open 글자가 바뀌는 기능 구현
+              -->
+              <a href="./doc/position06.html">position06</a>
+              <p> JS 클릭에 반응하여  close <-> open 글자가 바뀌는 기능을 구현합니다. </p>
+              <p>가상요소선택자를 이용합니다. rotate로 아이콘을 회전시킵니다. 마우스포인터는 cursor 속성으로 바꿉니다.</p>
+              <em>2022.05.26</em>
+      </li>
+      <li>
+        <!--       
+                2022.05.26 young
+                위의 close 기능 구현 사이드바 버전과 keyframes
+              -->
+              <a href="./doc/position06_side-bar.html">position06_side-bar, @keyframes </a>
+              <p> 사이드바 기능을 구현합니다. </p>
+              <p> keyframes를 활용한 애니메이션을 학습합니다.</p>
+              <em>2022.05.26</em>
+      </li>
+      <li>
+        <!--       
+                2022.05.30 young
+                반응형 화면 구현하기
+              -->
+              <a href="./doc/basic01.html">basic01 반응형화면 구현하기</a>
+              <strong> @media를 이용해 반응형 화면을 구현하는 방법을 학습합니다. </strong>
+              <p>html 기본 틀을 숙지합니다.</p>
+              <em>2022.05.30</em>
+      </li>
+      <li>
+        <!--       
+                2022.05.31 young
+                슬라이드 멋지게 구현하기
+              -->
+              <a href="./doc/slick01.html">slick01 멋진 슬라이드 구현</a>
+              <strong> [JS] 슬라이드와 버튼을 구현합니다. </strong>
+              <p>transition: 0.5s 0.5s; / transition-property </p>
+              <em>2022.05.31</em>
+      </li>
+    </ol>
+    <h2>trn</h2>
+    <ol>
+    <li>
+      <!-- 
+        2022.05.23 young
+        slide를 적용하는 방법까지만 익히고 실제로 적용해보는 시간은 이후에 있을 것입니다.
+      -->
+      <a href="../trn01/index.html"> 3단 이미지 </a>
+      <p> DK-steel 사이트의 일부를 따라 구현했습니다. </p>
+      <p> slick으로 slide를 적용하는 방법을 학습했습니다. </p>
+      <strong> wrap, content, container 등 semantic tag 올바른 사용법을 학습합니다.</strong>
+      <em>2022.05.23</em>
+    </li>
+    <li>
+<!--       
+        2022.05.24 young
+        
+      -->
+      <a href="../trn01/index.html"> 헤더, 메뉴 구현 </a>
+      <p> 색상은 bootstrap 에서 만든 색을 이용하면 이쁩니다. 색상을 변수에 담아 이용합니다. </p>
+      <p> rem 단위를 이용합니다.</p>
+      <p> 슬라이드를 구현합니다.</p>
+      <em>2022.05.24</em>
+    </li>
+    <li>
+    <!--       
+        2022.05.27 young
+        
+      -->
+      <a href="../trn01/index.html"> main 부터 footer까지 구현 </a>
+      <p> transform: scale로 이미지 크기를 키울 때 overflow: hidden; 을 적용하지만 이미지 크기가 넘친다면 img 를 div로 감싸주면 됩니다.  </p>
+      <strong> flex 활용하는 방법을 학습합니다.</strong>
+      <strong> 이미지 위에 패턴을 넣는 방법을 학습합니다. 두 가지 방법이 있습니다.</strong>
+      <em>2022.05.27</em>
+    </li>
+  </ol>
+  </body>
+</html>

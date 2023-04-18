@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+.box{
+    margin:30px auto;
+    width: 600px;
+    border: 1px solid #333;
+}
+
+.box01 {
+    background: #ff0;
+}
+
+.box02 {
+    padding: 30px;
+    background: #f00;
+}
+
+.box03 {
+    /* inlince 인 strong tag를 박스로 바꿉니다. */
+    display: block;
+    margin: 100px auto;
+    padding: 100px 30px;
+}
