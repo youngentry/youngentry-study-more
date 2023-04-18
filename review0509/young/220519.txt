@@ -1,0 +1,366 @@
+display: none; 없앱니다.
+display: block; 나타냅니다. box 속성으로 만듭니다.
+display: inline-block; inline(가로배열, 띄어쓰기)속성과 box(size)의 속성을 갖습니다.
+display: flex; 
++
+display: inline; 박스의 속성을 없애고 inline 속성으로 만듭니다.(잘 안씁니다.)
+
+///////////////////////////
+
+position 속성
+
+position: static; 모든 태그는 기본적으로 static 상태입니다. 이후에 배우는 중요한 속성입니다.
+position: relative; 기준이 됩니다.
+
+position : absolute; 
+자신의 좌표(top, right, bottom, left)를 갖습니다. 
+맨 앞으로 떠오릅니다. 
+겹치기 위해 이용합니다. 
+자식에서 빠져버리게 됩니다. 
+부모를 기준으로 하는 width 값이 사라져 쪼그라듭니다. 
+body를 기준으로 변하게 됩니다. 
+absolute 를 기준으로 할 수 있습니다.
+
+position: fixed; 
+기준이 없습니다. 
+화면(벽 포트)을 기준으로 상대적인 위치가 정해집니다. 
+화면 밖으로이동하여도 스크롤 바가 생기지 않습니다. 
+맨 앞으로 떠오릅니다.
+
+//////////////////////////
+z-index: ; layout의 순서를 정할 때 이용합니다.
+
+
+/////////////////////////
+팝업창은 겹쳐있기 때문에 position을 학습하기에 좋습니다.
+
+    <div class="popup">
+        <button>close</button> 버튼을 만듭니다.
+    </div>
+
+.popup {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 450px;
+    height: 350px;
+    background: red;
+}
+body를 기준으로 왼쪽 위 꼭지점이 top: 50%; left: 50%; 에 위치하게 됩니다.
+
+
+//////////////////////////////////
+
+transform: ; layout을 깨지 않습니다. 자기 자신을 기준으로 합니다.
+    transform: translateX(-50%);
+
+transform이 두 번 사용되면 두 번째 transform이 첫 번째 transform 을 덮어씁니다.
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+
+올바른 표현은 한 transform에 입력하는 것입니다.
+    transform: translateX(-50%) translateY(-50%);
+
+축약형은 다음과 같습니다.
+    transform: translate(-50%, -50%);
+
+
+중요합니다. 형태를 외웁니다.
+.popup {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 350px;
+    background: red;
+}
+
+button을 왼쪽 아래로 이동합니다.
+기준은 (.popup { position: absolute; )가 됩니다.
+.popup button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+/////////////////
+
+자바스크립트를 이용해 close를 누르면 팝업 창이 닫히도록 합니다.
+우선 <script></script> 를 엽니다. 자바스크립트는 script 태그 안에서 실행합니다.
+그리고 document.querySelector('') 로 선택을 합니다.
+    <script>
+        document.querySelector('.popup button')
+    </script>
+
+.addEventListener('click', function()) 이벤트('click')를 실행하면 function()을 실행합니다.
+이벤트는 형태가 정해져 있습니다. ('dbclick', 'mouseover', 'scroll', 'hover' 등등)
+    <script>
+        document.querySelector('.popup button').addEventListener('click', function(){})
+    </script>
+
+
+/////////////////////////
+
+console.log('') 현재 진행 상태를 확인하기 위해서 이용합니다.
+출력이 된다면 현재까지는 이상이 없음을 알 수 있습니다.
+    <script>
+        document.querySelector('.popup button').addEventListener('click', function(){
+            console.log('done')
+        })
+    </script>
+
+선택자로 ".popup"을 선택한 뒤 style.display = "none"; 으로 설정합니다. 
+    <script>
+      document
+        .querySelector(".popup button")
+        .addEventListener("click", function () {
+          console.log("done");
+          document.querySelector(".popup").style.display = "none";
+        });
+    </script>
+
+close button의 'click' 이벤트를 실행하면 팝업 창이 display: none 되어 사라지게 됩니다.
+<div class="popup" style="display: none;">
+      <button>close</button>
+    </div>
+
+// jquery 를 이용하는 이유는 이 과정이 편해지기 때문입니다.
+// 그리고 리액트가 개발 된 이유는 이 과정을 더욱 간편하게 할 수 있기 때문입니다.
+
+
+/////////////////////////////////////////////////
+
+shortcut : ul>li*6>a{menu0$}
+
+        <li><a href="">menu01</a></li>
+        <li><a href="">menu02</a></li>
+        <li><a href="">menu03</a></li>
+        <li><a href="">menu04</a></li>
+        <li><a href="">menu05</a></li>
+        <li><a href="">menu06</a></li>
+
+
+////////////////////////////////////////////
+
+position: fixed; 를 이용해 옆에서 나타나는 모션을 구현합니다.
+아주 많이 사용하는 position 기술입니다. 중요합니다.
+
+        <li><a href="">menu06</a></li>
+    </ul></nav>
+    <div class="mopen">
+        <button>열고닫기</button>
+    </div>
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100vh;
+    background: #fff;
+}
+
+nav의 position: absolute; 로 인해서 button이 가져렸습니다.
+<삽입 20220519_hided_button.png>
+
+absolute; 속성은 스크롤 바가 생깁니다.
+nav {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 500px;
+    height: 100vh;
+    background: #fff;
+}
+<삽입 20220519_absolute_make_a_scroll_bar.png>
+
+fixed 속성은 스크롤 바가 생기지 않습니다.
+nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 500px;
+    height: 100vh;
+    background: #fff;
+}
+<삽입 20220519_fixed.png>
+
+////////////////////////////////////
+클릭했을때 나타나도록 하기
+
+classList.add("on"); 으로 nav에 클래스 on을 붙일 수 있습니다. (on/off 형식에는 아래의 toggle을 더 자주 이용합니다.)
+nav.on {
+    left: 0;
+}
+
+    <script>
+      document.querySelector(".mopen").addEventListener("click",
+        function () {
+          document.querySelector("nav").classList.add("on");
+        });
+    </script>
+
+
+toggle 을 활용하면 click 이벤트가 일어날 때 현재 "nav.on" 이라면 .on을 지우고 "nav" 라면 .on을 추가합니다.
+      document.querySelector(".mopen").addEventListener("click",
+        function () {
+          document.querySelector("nav").classList.toggle("on");
+        });
+
+
+  transition: 0.5s; transition을 이용하면 부드럽게 나타나고 사라지는 연출이 가능합니다.
+nav {
+  position: fixed;
+  top: 0;
+  left: -500px;
+  width: 500px;
+  height: 100vh;
+  background: #fff;
+  transition: 0.5s;
+}
+
+
+/////////////////////////////////////////
+
+메뉴 박스를 X 박스로 바꾸기
+
+    <div class="mopen">
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+박스 위치는 fixed 로 고정합니다.
+.mopen {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background: #ddd;
+}
+
+span이 겹쳐지도록 absolute 지정합니다.
+.mopen span {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  height: 3px;
+  background: #f00;
+}
+
+양방향을 지정하면  width를 지정하지 않아도 사이의 간격 만큼 span이 나타나게 됩니다.
+  left: 5px;
+  right: 5px;
+
+
+각각의 span의 위치를 조절합니다.
+.mopen span:nth-child(1) {
+  top: 5px;
+}
+.mopen.on span:nth-child(1) {
+  top: 100px;
+}
+.mopen span:nth-child(2) {
+  top: 14px;
+}
+.mopen span:nth-child(3) {
+  top: 14px;
+}
+.mopen span:nth-child(4) {
+  bottom: 5px;
+}
+
+//////////////////////////////////////////////////////////
+주의사항입니다. 
+
+.mopen span {
+  position: absolute;
+  top: 5px
+  left: 5px;
+  right: 5px;
+  height: 3px;
+  background: #f00;
+}
+
+상위에서 지정된 값( top: 5px )이 
+
+.mopen span:nth-child(1) {
+  top: 5px;
+}
+.mopen.on span:nth-child(1) {
+  display: none;
+}
+.mopen span:nth-child(2) {
+  top: 14px;
+}
+.mopen span:nth-child(3) {
+  top: 14px;
+}
+.mopen span:nth-child(4) {
+  bottom: 5px;  // top: 5px 로 인해서
+}
+하위에서 다시 적용하려면 적용이 안되니 주의해야합니다.
+
+///////////////////////////////////////////////////////
+display:none(과 같이 수치가 없는, 중간단계가 없는 속성)은 trasition 적용이 안됩니다.
+
+이를 대신하여 opacity: 0; 을 활용하면 됩니다.
+.mopen.on span:nth-child(1) {
+  opacity: 0;
+}
+
+//////////////////////////////////
+transform 으로 형태를 알맞게 변환합니다.
+
+.mopen span {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  height: 3px;
+  background: #f00;
+  transition: 0.5s;
+}
+
+.mopen span:nth-child(1) {
+  top: 5px;
+}
+.mopen.on span:nth-child(1) {
+  opacity: 0;
+}
+.mopen span:nth-child(2) {
+  top: 14px;
+}
+.mopen.on span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.mopen span:nth-child(3) {
+  top: 14px;
+}
+.mopen.on span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.mopen span:nth-child(4) {
+  bottom: 5px;
+}
+
+.mopen.on span:nth-child(4) {
+  opacity: 0;
+}
+
+
+//////////////////
+this 를 활용하면 event에서 선택한 선택자( document.querySelector(".mopen") )를 축약할 수 있습니다.
+      document.querySelector(".mopen").addEventListener("click", function () {
+        document.querySelector("nav").classList.toggle("on");
+        this.classList.toggle("on");
+      });
+
+////////////////
+
+transform은 자기 자신을 바꿉니다. layout을 바꾸지 않습니다. (스크롤 바는 생깁니다.)
+transition은 event와 함께 애니메이션을 줍니다.
+keyframes는 자기 스스로 움직입니다.
+
+//////////////////////////////
+

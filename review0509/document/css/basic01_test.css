@@ -1,0 +1,141 @@
+.header {
+  line-height: 100px;
+  background: pink;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container ul {
+  display: flex;
+  gap: 40px;
+}
+
+.visual {
+  line-height: 600px;
+  height: 600px;
+  text-align: center;
+  background: skyblue;
+}
+
+footer {
+  line-height: 100px;
+  text-align: center;
+  background: pink;
+}
+
+.mopen {
+  display: none;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background: greenyellow;
+}
+
+.mopen span {
+  position: absolute;
+  right: 5px;
+  left: 5px;
+  height: 2px;
+  background: #333;
+}
+
+.mopen span:nth-child(1) {
+  top: 7px;
+}
+.mopen span:nth-child(2) {
+  top: 14px;
+}
+.mopen span:nth-child(3) {
+  top: 14px;
+}
+.mopen span:nth-child(4) {
+  bottom: 7px;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    line-height: 100px;
+    background: pink;
+  }
+
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 40px;
+  }
+
+  nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: calc(100% - 90px);
+    height: 100vh;
+    background: rgb(248, 243, 243);
+    transition: left 0.5s;
+  }
+
+  nav.on {
+    left: 0;
+  }
+
+
+  .visual {
+    line-height: 600px;
+    height: 600px;
+    text-align: center;
+    background: skyblue;
+  }
+
+  footer {
+    line-height: 100px;
+    text-align: center;
+    background: pink;
+  }
+
+  .mopen {
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background: greenyellow;
+  }
+
+  .mopen span {
+    position: absolute;
+    right: 5px;
+    left: 5px;
+    height: 2px;
+    background: #333;
+  }
+
+  .mopen.on span:nth-child(1) {
+    display: none;
+  }
+  .mopen.on span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  .mopen.on span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  .mopen.on span:nth-child(4) {
+    display: none;
+  }
+}

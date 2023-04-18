@@ -1,0 +1,30 @@
+body {
+  background: #333;
+}
+
+.shoes {
+  padding: 100px 0;
+}
+
+.shoes > .case {
+  position: relative;
+  width: 809px;
+  height: 450px;
+  margin: 0 auto; /* 가운데로 이동합니다. */
+  overflow: hidden;
+}
+
+.shoes .case ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s;
+}
+
+.num {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  color: #fff;
+  font-size: 30px;
+}
