@@ -1,0 +1,30 @@
+.mainVisual {
+    padding: 30px;
+}
+
+.viewed {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    strong {
+        margin-bottom: 10px;
+    }
+    ul {
+        display: flex;
+        gap: 5px;
+        li {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            &:hover {
+                border: 1px solid #000;
+            }
+            img {
+                height: 80px;
+            }
+        }
+    }
+}
