@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    line-height: 1;
+}
+
+.TopBanner {
+    padding: 0;
+    background: #ddd;
+    overflow: hidden;
+    height: 100px;
+    transition: 0.5s;
+}
+
+.MainVisual {
+    height: 600px;
+}
+.MainVisual .itm01 {
+    background: url(../public/assets/mainvisual01.jpg);
+}

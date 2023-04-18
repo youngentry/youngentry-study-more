@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+section {
+    font-size: 100px;
+    height: 150vh;
+}
+
+.on {
+    transition: 1s;
+    color: #f00;
+}
+
+.icon {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    font-size: 40px;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.icon.on {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.TopBanner {
+    height: 100px;
+    background: #ddd;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.TopBanner.on {
+    height: 0;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Num {
+            font-size: 100px;
+        }
+
+        .Num.on {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Num">
+        1004
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        var TG = true;
+        $('.Num').on('click', function () {
+            if (TG) { $(this).addClass('on') } else { $(this).removeClass('on') }
+            TG = !TG;
+        })
+    </script> -->
+    <script>
+        let TOGGLE = true;
+        document.querySelector('.Num').addEventListener('click', e => {
+            TOGGLE ? e.target.classList.add('on') : e.target.classList.remove('on');
+            TOGGLE = !TOGGLE
+        })
+    </script>
+</body>
+
+</html>
