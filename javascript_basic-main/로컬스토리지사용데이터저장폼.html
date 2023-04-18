@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="txt"></ul>
+    <input type="text" id="todo" value="">
+    <div id="warning" style="color: #f00;font-size:12px;"></div>
+    <button class="push">추가</button>
+    <script>
+        let DATA = JSON.parse(localStorage.getItem('todolist')) || [];
+        let current_id = (DATA ? DATA.length : 1);
+        //정규표현식 객체로 모아놓음...
+        const reg = {
+            ko: /^[ㄱ-ㅎ|가-힣]/,
+            id: /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{6,}$/,
+            pw: /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/,
+            tel: /^(070|02|0[3-9]{1}[0-9]{1})[0-9]{3,4}[0-9]{4}$/,
+            hp: /^(01[016789]{1})[0-9]{4}[0-9]{4}$/,
+        };
+        document.querySelector('.push').addEventListener('click', () => {
+            if (!reg['ko'].test(todo.value) || todo.value.trim().length < 6) {
+                warning.innerHTML = '5자 이상 한글만 가능해요....';
+                todo.value = '';
+                todo.focus();
+                return
+            }
+
+            warning.innerHTML = '';
+            DATA.push({ id: current_id, content: todo.value });
+            console.log(DATA)
+
+            current_id++;
+
+            let HTM = DATA.map(el => {
+                return '<li>' + el.content + '<span>DEL</span></li>'
+            }).join('');
+            document.querySelector('.txt').innerHTML = HTM;
+
+            localStorage.setItem('todolist', JSON.stringify(DATA));
+            todo.value = '';
+            todo.focus();
+        });
+
+        const REDATA = JSON.parse(localStorage.getItem('todolist')) || []
+
+        const HTM = REDATA.map(el => {
+            return '<li>' + el.content + '<span>DEL</span></li>'
+        }).join('')
+
+        document.querySelector('.txt').innerHTML = HTM;
+        document.querySelectorAll('span').forEach(
+            (el, idx) => {
+                el.addEventListener('click', () => {
+                    console.log(DATA[idx].id, el.id)
+                    let FILTERDATA = DATA.filter(el => el.id !== DATA[idx].id);
+                    console.log(FILTERDATA);
+
+                    localStorage.setItem('todolist', JSON.stringify(FILTERDATA));
+                    const HTM = DATA.map(el => {
+                        return '<li>' + el.content + '<span>DEL</span></li>'
+                    }).join('')
+
+                    document.querySelector('.txt').innerHTML = HTM;
+                }
+                )
+            })
+
+
+
+
+    </script>
+</body>
+
+</html>

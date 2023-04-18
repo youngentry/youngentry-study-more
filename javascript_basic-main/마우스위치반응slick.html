@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+
+    <style>
+        .m {
+            background: #f00
+        }
+    </style>
+</head>
+
+<body>
+    <section class="m">
+        <div class="slider">
+            <figure>
+                <img src="http://placeimg.com/300/300/animals" alt="">
+            </figure>
+            <figure>
+                <img src="http://placeimg.com/300/300/animals" alt="">
+            </figure>
+            <figure>
+                <img src="http://placeimg.com/300/300/animals" alt="">
+            </figure>
+            <figure>
+                <img src="http://placeimg.com/300/300/animals" alt="">
+            </figure>
+            <figure>
+                <img src="http://placeimg.com/300/300/animals" alt="">
+            </figure>
+            <figure>
+                <img src="http://placeimg.com/300/300/animals" alt="">
+            </figure>
+            <figure>
+                <img src="http://placeimg.com/300/300/animals" alt="">
+            </figure>
+            <figure>
+                <img src="http://placeimg.com/300/300/animals" alt="">
+            </figure>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        const S = $('.slider').slick({
+            slidesToShow: 5,
+        });
+
+        $('.m').on('mousemove', e => {
+            e.pageX > $(this).width() / 2
+                ? S.slick('slickPrev')
+                : S.slick('slickNext')
+        })
+    </script>
+</body>
+
+</html>

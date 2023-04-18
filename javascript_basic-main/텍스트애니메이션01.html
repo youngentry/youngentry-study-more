@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .string span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(-200px);
+        font-size: 100px;
+        transition: 0.5s
+    }
+</style>
+
+<body>
+    <div class="string">
+        leechanghun
+    </div>
+    <script>
+        const NAME_MY = document.querySelector('.string');
+        const NAME_TEXT = NAME_MY.innerText;
+        //const NAME_TEXT = NAME_MY.textContent; node 공백을 포함하여 다 가져옴.
+        const STRING_SPLIT = [...NAME_TEXT];
+        //const STRING_SPLIT = NAME_MY.split('');
+        console.log(STRING_SPLIT);
+        NAME_MY.innerHTML = '';
+        STRING_SPLIT.map(el => { NAME_MY.innerHTML += '<span>' + el });
+        const RE_TEXT = [...NAME_MY.children];
+        const TXT_ANI = () => {
+            RE_TEXT.forEach((el, idx) => {
+                setTimeout(() => {
+                    el.style.cssText = `
+                    opacity:1;
+                    transform: translateY(0)
+                    `
+                }, idx * 400)
+            })
+        }
+
+        TXT_ANI();
+
+    </script>
+</body>
+
+</html>

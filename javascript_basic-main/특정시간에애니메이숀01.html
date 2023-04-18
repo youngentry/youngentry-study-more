@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 0분에 한 번 랜덤 숫자주기  -->
+    <div class="num">0</div>
+    <script>
+        const BOX = document.querySelector('.num');
+
+        setInterval(() => {
+            let DATE = new Date();
+            let S = DATE.getSeconds();
+            let NUM = Math.floor(Math.random() * 10000);
+            (S % 5 == 1) && (BOX.innerHTML = NUM);
+        }, 1000);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
